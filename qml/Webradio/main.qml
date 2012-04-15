@@ -30,7 +30,7 @@ Rectangle {
             onClicked: {
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
                 if (listView.model == xmlGenres) {
-                    xmlStations.query = "/database/genre/" + xmlGenres.get(listView.currentIndex).genre_name;
+                    xmlStations.query = "/database/" + xmlGenres.get(listView.currentIndex).genre_name;
                     xmlStations.source = xmlGenres.source;
                     listView.model = xmlStations;
                     listView.delegate = radioListView;
