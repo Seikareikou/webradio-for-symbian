@@ -3,21 +3,23 @@ import QtMultimediaKit 1.1
 
 Rectangle {
     XmlListModel {
-         id: xmlModel
-         source: "http://dir.xiph.org/yp.xml"
-         query: "/directory/entry"
+         id: xmlGenres
+         source: "http://dl.dropbox.com/u/72655866/database.xml"
+         query: "/database/genre"
 
-         XmlRole { name: "server_name";  query: "server_name/string()"  }
-         XmlRole { name: "listen_url";   query: "listen_url/string()"   }
-         XmlRole { name: "server_type";  query: "server_type/string()"  }
-         XmlRole { name: "genre";        query: "genre/string()"        }
-         XmlRole { name: "current_song"; query: "current_song/string()" }
+         XmlRole { name: "genre_name";  query: "name/string()" }
+    }
+    XmlListModel {
+         id: xmlStations
+
+         XmlRole { name: "radio_name"; query: "name/string()" }
+         XmlRole { name: "radio_url";  query: "url/string()"  }
     }
     ListView {
         id: listView
         anchors.fill: parent
-        model: xmlModel
-        delegate: station
+        model: xmlGenres
+        delegate: genreListView
         highlight: Rectangle {
             color: "lightsteelblue";
             radius: 7
@@ -26,21 +28,36 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                listView.currentIndex = listView.indexAt (mouseX, listView.contentY + mouseY)
-                console.debug(xmlModel.get(listView.currentIndex).server_name);
-                player.stop();
-                player.source = xmlModel.get(listView.currentIndex).listen_url;
-                player.play();
+                listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
+                if (listView.model == xmlGenres) {
+                    xmlStations.query = "/database/genre/" + xmlGenres.get(listView.currentIndex).genre_name;
+                    xmlStations.source = xmlGenres.source;
+                    listView.model = xmlStations;
+                    listView.delegate = radioListView;
+                }
+                if (listView.model == xmlStations) {
+                    player.stop();
+                    player.source = xmlStations.get(listView.currentIndex).radio_url;
+                    player.play();
+                }
             }
         }
     }
     Component {
-        id: station
+        id: genreListView
         Item {
-            width: parent.width ; height: 55
+            width: parent.width ; height: 25
             Column {
-                Text { text: '<b>Name:</b> ' + server_name }
-                Text { text: '<b>Song:</b> ' + current_song }
+                Text { text: "<b>" + genre_name + "</b>"}
+            }
+        }
+    }
+    Component {
+        id: radioListView
+        Item {
+            width: parent.width ; height: 25
+            Column {
+                Text { text: "<b>" + radio_name + "</b>"}
             }
         }
     }
