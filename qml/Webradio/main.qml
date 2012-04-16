@@ -3,9 +3,9 @@ import QtMultimediaKit 1.1
 
 Rectangle {
     XmlListModel {
-         id: xmlGenres
-         source: "http://dl.dropbox.com/u/72655866/database.xml"
-         query: "/database/genre"
+         id: xmlRadio
+         source: "database.xml"
+         query: "/database/radio"
 
          XmlRole { name: "genre_name";  query: "name/string()" }
     }
@@ -18,7 +18,7 @@ Rectangle {
     ListView {
         id: listView
         anchors.fill: parent
-        model: xmlGenres
+        model: xmlRadio
         delegate: genreListView
         highlight: Rectangle {
             color: "lightsteelblue";
@@ -29,9 +29,9 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
-                if (listView.model == xmlGenres) {
-                    xmlStations.query = "/database/" + xmlGenres.get(listView.currentIndex).genre_name;
-                    xmlStations.source = xmlGenres.source;
+                if (listView.model == xmlRadio) {
+                    xmlStations.query = "/database/" + xmlRadio.get(listView.currentIndex).genre_name;
+                    xmlStations.source = xmlRadio.source;
                     listView.model = xmlStations;
                     listView.delegate = radioListView;
                 }
