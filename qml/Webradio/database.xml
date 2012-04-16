@@ -1,0 +1,49 @@
+﻿<database>
+	<radio><name>Sky.fm</name></radio>
+	<Sky.fm><name>Alternative Rock</name><url>http://80.94.69.106:6754/</url></Sky.fm>
+	<Sky.fm><name>American Songbook</name><url>http://72.26.204.28:6864/</url></Sky.fm>
+	<Sky.fm><name>Bebop Jazz</name><url>http://72.26.204.18:6854/</url></Sky.fm>
+	<Sky.fm><name>Best of the 80's</name><url>http://scfire-ntc-aa01.stream.aol.com:80/stream/1013</url></Sky.fm>
+	<Sky.fm><name>Bossa Nova</name><url>http://80.94.69.106:6804/</url></Sky.fm>
+	<Sky.fm><name>Classic Rap</name><url>http://80.94.69.106:6694/</url></Sky.fm>
+	<Sky.fm><name>Classic Rock</name><url>http://80.94.69.106:6734/</url></Sky.fm>
+	<Sky.fm><name>Classical Guitar</name><url>http://205.188.215.226:8020/</url></Sky.fm>
+	<Sky.fm><name>Classical Piano Trios</name><url>http://72.26.204.28:6874/</url></Sky.fm>
+	<Sky.fm><name>Contemporary Christian</name><url>http://80.94.69.106:6784/</url></Sky.fm>
+	<Sky.fm><name>Country</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1019</url></Sky.fm>
+	<Sky.fm><name>Dance Hits</name><url>http://72.26.204.18:6844/</url></Sky.fm>
+	<Sky.fm><name>DaTempo Lounge</name><url>http://scfire-mtc-aa01.stream.aol.com:80/stream/2012</url></Sky.fm>
+	<Sky.fm><name>Dreamscapes</name><url>http://u12.sky.fm:80/sky_dreamscapes</url></Sky.fm>
+	<Sky.fm><name>Hard Rock</name><url>http://u12b.sky.fm:80/sky_hardrock</url></Sky.fm>
+	<Sky.fm><name>Hit 70's</name><url>http://scfire-mtc-aa01.stream.aol.com:80/stream/1076</url></Sky.fm>
+	<Sky.fm><name>Indie Rock</name><url>http://80.94.69.106:6724/</url></Sky.fm>
+	<Sky.fm><name>Jazz Classics</name><url>http://205.188.215.227:8008/</url></Sky.fm>
+	<Sky.fm><name>Jpop</name><url>http://80.94.69.106:6914/</url></Sky.fm>
+	<Sky.fm><name>Love Music</name><url>http://91.185.206.240:8000/</url></Sky.fm>
+	<Sky.fm><name>Metal</name><url>http://u12b.sky.fm:80/sky_metal</url></Sky.fm>
+	<Sky.fm><name>Modern Blues</name><url>http://u12b.sky.fm:80/sky_modernblues</url></Sky.fm>
+	<Sky.fm><name>Modern Rock</name><url>http://u12b.sky.fm:80/sky_modernrock</url></Sky.fm>
+	<Sky.fm><name>Mostly Classical</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1006</url></Sky.fm>
+	<Sky.fm><name>Movie Soundtracks</name><url>http://80.94.69.106:6774/</url></Sky.fm>
+	<Sky.fm><name>Nature</name><url>http://80.94.69.106:6934/</url></Sky.fm>
+	<Sky.fm><name>New Age</name><url>http://scfire-ntc-aa01.stream.aol.com:80/stream/1002</url></Sky.fm>
+	<Sky.fm><name>Oldies</name><url>http://91.121.3.80:8010/</url></Sky.fm>
+	<Sky.fm><name>Piano Jazz</name><url>http://u12.sky.fm:80/sky_pianojazz</url></Sky.fm>
+	<Sky.fm><name>Pop Punk</name><url>http://u12.sky.fm:80/sky_poppunk</url></Sky.fm>
+	<Sky.fm><name>Relaxation</name><url>http://u12.sky.fm:80/sky_relaxation</url></Sky.fm>
+	<Sky.fm><name>Romantica</name><url>http://u12.sky.fm:80/sky_romantica</url></Sky.fm>
+	<Sky.fm><name>Roots Reggae</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1017</url></Sky.fm>
+	<Sky.fm><name>Salsa</name><url>http://205.188.215.231:8010/</url></Sky.fm>
+	<Sky.fm><name>Ska</name><url>http://u12b.sky.fm:80/sky_ska</url></Sky.fm>
+	<Sky.fm><name>Smooth Jazz 24'7</name><url>http://u12.sky.fm:80/sky_smoothjazz247</url></Sky.fm>
+	<Sky.fm><name>Smooth Jazz</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1010</url></Sky.fm>
+	<Sky.fm><name>Soft Rock</name><url>http://88.191.122.12:6524/</url></Sky.fm>
+	<Sky.fm><name>Solo Piano</name><url>http://scfire-mtc-aa01.stream.aol.com:80/stream/1004</url></Sky.fm>
+	<Sky.fm><name>The Beatles Tribute</name><url>http://72.26.204.18:6824/</url></Sky.fm>
+	<Sky.fm><name>Top Hits</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1014</url></Sky.fm>
+	<Sky.fm><name>Uptempo Smooth Jazz</name><url>http://91.121.3.80:8000/</url></Sky.fm>
+	<Sky.fm><name>Urban Jamz</name><url>http://u12.sky.fm:80/sky_urbanjamz</url></Sky.fm>
+	<Sky.fm><name>Vocal New Age</name><url>http://u12.sky.fm:80/sky_vocalnewage</url></Sky.fm>
+	<Sky.fm><name>Vocal Smooth Jazz</name><url>http://u12.sky.fm:80/sky_vocalsmoothjazz</url></Sky.fm>
+	<Sky.fm><name>World</name><url>http://u12.sky.fm:80/sky_world</url></Sky.fm>
+</database>
