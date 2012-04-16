@@ -1,5 +1,13 @@
 ﻿<database>
+	<radio><name>Absolute</name></radio>
 	<radio><name>Sky.fm</name></radio>
+	
+	<Absolute><name>Absolute Radio 1215AM</name><url>http://mp3-ar-128.as34763.net:80/</url></Absolute>
+	<Absolute><name>Absolute Radio 80s</name><url>http://mp3-a8-128.as34763.net:80/</url></Absolute>
+	<Absolute><name>Absolute Radio 90s</name><url>http://mp3-a9-128.as34763.net:80/</url></Absolute>
+	<Absolute><name>Absolute Radio 00s</name><url>http://mp3-a0-128.as34763.net:80/</url></Absolute>
+	<Absolute><name>Absolute Classic Rock</name><url>http://mp3-ac-128.as34763.net:80/</url></Absolute>
+	
 	<Sky.fm><name>Alternative Rock</name><url>http://80.94.69.106:6754/</url></Sky.fm>
 	<Sky.fm><name>American Songbook</name><url>http://72.26.204.28:6864/</url></Sky.fm>
 	<Sky.fm><name>Bebop Jazz</name><url>http://72.26.204.18:6854/</url></Sky.fm>
