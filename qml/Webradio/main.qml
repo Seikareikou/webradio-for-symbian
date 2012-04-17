@@ -57,10 +57,6 @@ Rectangle {
             anchors.fill: parent
             model: xmlRadio
             delegate: genreListView
-            highlight: Rectangle {
-                width: listRect.width
-                color: "#55AAFF"
-            }
             focus: false
             MouseArea {
                 anchors.fill: parent
@@ -75,7 +71,7 @@ Rectangle {
                         buttonBack.visible = true;
                         listRect.height -= 80;
                     }
-                    if (listView.model == xmlStations) {
+                    else {
                         player.stop();
                         player.source = xmlStations.get(listView.currentIndex).radio_url;
                         player.play();
@@ -123,6 +119,12 @@ Rectangle {
                     color: "darkblue"
                 }
             }
+            Rectangle {
+                width: parent.width
+                height: 1
+                border.color: "#AAAAAA"
+                border.width: 2
+            }
         }
     }
     Component {
@@ -142,8 +144,8 @@ Rectangle {
             Rectangle {
                 width: parent.width
                 height: 1
-                border.color: "black"
-                border.width: 1
+                border.color: "#AAAAAA"
+                border.width: 2
             }
         }
     }
