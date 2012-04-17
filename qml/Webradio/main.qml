@@ -45,8 +45,9 @@ Rectangle {
     }
 
     Rectangle {
+        id: listRect
         width: parent.width
-        height: parent.height - tabs.height - buttonBack.height
+        height: parent.height - tabs.height
         y: 80
         z: 0
         clip: true
@@ -57,6 +58,7 @@ Rectangle {
             model: xmlRadio
             delegate: genreListView
             highlight: Rectangle {
+                width: listRect.width
                 color: "#55AAFF"
             }
             focus: false
@@ -69,6 +71,9 @@ Rectangle {
                         xmlStations.source = xmlRadio.source;
                         listView.model = xmlStations;
                         listView.delegate = radioListView;
+
+                        buttonBack.visible = true;
+                        listRect.height -= 80;
                     }
                     if (listView.model == xmlStations) {
                         player.stop();
@@ -78,18 +83,28 @@ Rectangle {
                 }
             }
         }
-        Rectangle {
-            id: buttonBack
-            width: parent.width
-            height: 80
-            y: listView.y + listView.height
-            z: 1
-            color: "#112233"
-            Text {
-                    anchors.centerIn: parent
-                    text: "Back"
-                    color: "#6699FF"
-                    font.pointSize: 36
+    }
+    Rectangle {
+        id: buttonBack
+        visible: false
+        width: parent.width
+        height: 80
+        y: tabs.height + listView.height
+        z: 1
+        color: "#112233"
+        Text {
+                anchors.centerIn: parent
+                text: "Back"
+                color: "#6699FF"
+                font.pixelSize: 36
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                listView.model = xmlRadio;
+                listView.delegate = genreListView;
+                listRect.height += 80
+                buttonBack.visible = false
             }
         }
     }
@@ -103,7 +118,7 @@ Rectangle {
                 Text {
                     text: "<b>" + genre_name + "</b>"
                     x: 10
-                    font.pointSize: 36
+                    font.pixelSize: 36
                     font.family: "Helvetica"
                     color: "darkblue"
                 }
@@ -120,7 +135,7 @@ Rectangle {
                 Text {
                     text: "<b>" + radio_name + "</b>"
                     x: 10
-                    font.pointSize: 36
+                    font.pixelSize: 36
                     color: "#111155"
                 }
             }
