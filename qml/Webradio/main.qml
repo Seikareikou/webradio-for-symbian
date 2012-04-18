@@ -63,6 +63,12 @@ Rectangle {
                 anchors.fill: parent
                 model: xmlRadio
                 delegate: genreListView
+                highlight: Rectangle {
+                    width: listRect.width
+                    height: 95
+                    color: "lightblue"
+                }
+
                 focus: false
                 MouseArea {
                     anchors.fill: parent
@@ -93,8 +99,8 @@ Rectangle {
             id: buttonBackRadio
             visible: false
             width: parent.width
-            height: parent.height * 0.11
-            y: tabs.height + listView.height
+            height: parent.height * 0.11 < 60 ? 60 : parent.height * 0.11
+            y: parent.height - height
             z: 1
             color: "#112233"
             Text {
@@ -182,7 +188,7 @@ Rectangle {
                 anchors.centerIn: parent
             }
         }
-        Rectangle {
+/*        Rectangle {
             id: songInfo
             width: parent.width - parent.height * 0.015 * 2
             height: parent.height * 0.14
@@ -195,42 +201,48 @@ Rectangle {
                 font.pixelSize: parent.height * 0.4
                 anchors.centerIn: parent
             }
-        }
+        } */
         Rectangle {
             id: buttonLike
-            width: parent.height * 0.125
+            width: parent.height * 0.13
             height: width
             x: parent.width - parent.height * 0.015 - width
-            y: songInfo.y + songInfo.height + parent.height * 0.015
+            y: radioTitle.y + radioTitle.height + parent.height * 0.015
             color: "red"
         }
         Rectangle {
             id: buttonPlay
-            width: parent.height * 0.28
+            width: parent.height * 0.4
             radius: width / 2
             smooth: true
             height: width
             x: (parent.width - width) / 2
             y: buttonLike.y + buttonLike.height
             color: "black"
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    player.playing = !player.playing;
+                }
+            }
         }
         Rectangle {
             id: rectVolume
             width: parent.width - parent.height * 0.015 * 2
-            height: parent.height * 0.07
+            height: parent.height * 0.09
             x: parent.height * 0.015
-            y: buttonPlay.y + buttonPlay.height + parent.height * 0.015 * 2
+            y: buttonPlay.y + buttonPlay.height + parent.height * 0.017 * 2
             color: "yellow"
             Rectangle {
                 height: parent.height
-                width: parent.width * 0.15
+                width: parent.width * 0.17
                 color: "red"
             }
         }
         Rectangle {
             id: buttonBackPlayer
             width: parent.width
-            height: parent.height * 0.11
+            height: parent.height * 0.11 < 60 ? 60 : parent.height * 0.11
             y: parent.height - height
             color: buttonBackRadio.color
             MouseArea {
