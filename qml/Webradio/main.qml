@@ -115,7 +115,7 @@ Rectangle {
                     listView.model = xmlRadio;
                     listView.delegate = genreListView;
                     listRect.height += buttonBackRadio.height
-                    buttonBack.visible = false
+                    buttonBackRadio.visible = false
                 }
             }
         }
