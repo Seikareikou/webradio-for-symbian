@@ -41,7 +41,8 @@ OTHER_FILES += \
     qtc_packaging/debian_harmattan/compat \
     qtc_packaging/debian_harmattan/changelog \
     qml/Webradio/RadioList.qml \
-    qml/Webradio/RadioPlayer.qml
+    qml/Webradio/RadioPlayer.qml \
+    qml/Webradio/StationList.qml
 
 
 

@@ -1,15 +1,26 @@
 import QtQuick 1.0
-import QtMultimediaKit 1.2
+import QtMultimediaKit 1.1
+import com.nokia.symbian 1.1
 
-Rectangle {
-    id: mainRect
-    anchors.fill: parent
-
-    RadioList {
-
+PageStackWindow {
+    id: window
+    initialPage: RadioList {
+        tools: toolBarLayout
     }
+    showStatusBar: true
+    showToolBar: true
 
-    RadioPlayer {
-
+    ToolBarLayout {
+        id: toolBarLayout
+        ToolButton {
+            flat: true
+            iconSource: "toolbar-back"
+            onClicked: {
+                if (window.pageStack.depth <= 1)
+                    Qt.quit()
+                else
+                    window.pageStack.pop();
+            }
+        }
     }
 }
