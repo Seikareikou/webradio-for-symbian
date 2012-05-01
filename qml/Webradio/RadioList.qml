@@ -25,9 +25,7 @@ Page {
         RectList {
             model: xmlRadio
             delegate: radioListView
-        }
-        Audio {
-            id: player
+            fRadio: true
         }
     }
 }

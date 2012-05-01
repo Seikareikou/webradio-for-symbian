@@ -10,6 +10,10 @@ PageStackWindow {
     showStatusBar: true
     showToolBar: true
 
+    Audio {
+        id: player
+    }
+
     ToolBarLayout {
         id: toolBarLayout
         ToolButton {
