@@ -16,7 +16,7 @@ PageStackWindow {
     }
 
     WebRadioPlayer {
-        name: "oops"
+
     }
 
     ToolBarLayout {

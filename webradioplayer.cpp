@@ -1,7 +1,7 @@
 #include "webradioplayer.h"
 
-WebRadioPlayer::WebRadioPlayer(QObject *parent) :
-    QObject(parent)
+WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
+    QDeclarativeItem(parent)
 {
     player = new QMediaPlayer(this);
 }
@@ -15,13 +15,13 @@ QString WebRadioPlayer::name() const {
 }
 
 QString WebRadioPlayer::url() const {
-    return radioURL;
+    return radioUrl;
 }
 
 void WebRadioPlayer::setName(QString str) {
     radioName = str;
 }
 
-void WebRadioPlayer::setURL(QString str) {
-    radioURL = str;
+void WebRadioPlayer::setUrl(QString str) {
+    radioUrl = str;
 }
