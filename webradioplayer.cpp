@@ -56,3 +56,11 @@ void WebRadioPlayer::retrieveMetaData() {
     qDebug() << 1;
     qDebug() << metaArtist;
 }
+
+void WebRadioPlayer::addToFavoirite()
+{
+    qDebug()<<radioName;
+    qDebug()<<radioUrl;
+    Favoirites favoirite("D:\\favorite.xml");
+    favoirite.AddToFavoirites(radioName, radioUrl);
+}

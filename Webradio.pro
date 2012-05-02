@@ -28,7 +28,8 @@ MOBILITY += multimedia
 
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
-    webradioplayer.cpp
+    webradioplayer.cpp \
+    favoirites.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -50,7 +51,10 @@ OTHER_FILES += \
     qml/Webradio/RectList.qml
 
 HEADERS += \
-    webradioplayer.h
+    webradioplayer.h \
+    favoirites.h
+
+RESOURCES +=
 
 
 

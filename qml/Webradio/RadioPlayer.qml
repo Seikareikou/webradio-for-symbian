@@ -44,6 +44,10 @@ Page {
             x: parent.width - parent.height * 0.015 - width
             y: songInfo.y + songInfo.height + parent.height * 0.015
             color: "red"
+            MouseArea {
+                anchors.fill: parent
+                onClicked: player.addToFavoirite();
+            }
         }
         Rectangle {
             id: buttonPlay

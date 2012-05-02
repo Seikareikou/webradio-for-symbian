@@ -1,4 +1,4 @@
-﻿<database>
+<database>
 	<radio name="Absolute" id="x001" />
 	<radio name="Sky FM" id="x002" />
 	<x001>

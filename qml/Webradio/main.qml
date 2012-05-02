@@ -13,6 +13,7 @@ PageStackWindow {
 
     WebRadioPlayer {
         id: player
+
     }
 
     ToolBarLayout {
