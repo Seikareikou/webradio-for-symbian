@@ -32,7 +32,7 @@ Rectangle {
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
                 if (listRect.fRadio == true) {
                     var _query;
-                    _query = "/database/" + xmlRadio.get(listView.currentIndex).genre_name;
+                    _query = "/database/" + xmlRadio.get(listView.currentIndex).id + "/station";
                     window.pageStack.push(Qt.resolvedUrl("StationList.qml"), {query: _query})
                 }
                 else {

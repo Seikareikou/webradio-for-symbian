@@ -1,57 +1,59 @@
 ﻿<database>
-	<radio><name>Absolute</name></radio>
-	<radio><name>Sky.fm</name></radio>
-	
-	<Absolute><name>Absolute Radio 1215AM</name><url>http://mp3-ar-128.as34763.net:80/</url></Absolute>
-	<Absolute><name>Absolute Radio 80s</name><url>http://mp3-a8-128.as34763.net:80/</url></Absolute>
-	<Absolute><name>Absolute Radio 90s</name><url>http://mp3-a9-128.as34763.net:80/</url></Absolute>
-	<Absolute><name>Absolute Radio 00s</name><url>http://mp3-a0-128.as34763.net:80/</url></Absolute>
-	<Absolute><name>Absolute Classic Rock</name><url>http://mp3-ac-128.as34763.net:80/</url></Absolute>
-	
-	<Sky.fm><name>Alternative Rock</name><url>http://80.94.69.106:6754/</url></Sky.fm>
-	<Sky.fm><name>American Songbook</name><url>http://72.26.204.28:6864/</url></Sky.fm>
-	<Sky.fm><name>Bebop Jazz</name><url>http://72.26.204.18:6854/</url></Sky.fm>
-	<Sky.fm><name>Best of the 80's</name><url>http://scfire-ntc-aa01.stream.aol.com:80/stream/1013</url></Sky.fm>
-	<Sky.fm><name>Bossa Nova</name><url>http://80.94.69.106:6804/</url></Sky.fm>
-	<Sky.fm><name>Classic Rap</name><url>http://80.94.69.106:6694/</url></Sky.fm>
-	<Sky.fm><name>Classic Rock</name><url>http://80.94.69.106:6734/</url></Sky.fm>
-	<Sky.fm><name>Classical Guitar</name><url>http://205.188.215.226:8020/</url></Sky.fm>
-	<Sky.fm><name>Classical Piano Trios</name><url>http://72.26.204.28:6874/</url></Sky.fm>
-	<Sky.fm><name>Contemporary Christian</name><url>http://80.94.69.106:6784/</url></Sky.fm>
-	<Sky.fm><name>Country</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1019</url></Sky.fm>
-	<Sky.fm><name>Dance Hits</name><url>http://72.26.204.18:6844/</url></Sky.fm>
-	<Sky.fm><name>DaTempo Lounge</name><url>http://scfire-mtc-aa01.stream.aol.com:80/stream/2012</url></Sky.fm>
-	<Sky.fm><name>Dreamscapes</name><url>http://u12.sky.fm:80/sky_dreamscapes</url></Sky.fm>
-	<Sky.fm><name>Hard Rock</name><url>http://u12b.sky.fm:80/sky_hardrock</url></Sky.fm>
-	<Sky.fm><name>Hit 70's</name><url>http://scfire-mtc-aa01.stream.aol.com:80/stream/1076</url></Sky.fm>
-	<Sky.fm><name>Indie Rock</name><url>http://80.94.69.106:6724/</url></Sky.fm>
-	<Sky.fm><name>Jazz Classics</name><url>http://205.188.215.227:8008/</url></Sky.fm>
-	<Sky.fm><name>Jpop</name><url>http://80.94.69.106:6914/</url></Sky.fm>
-	<Sky.fm><name>Love Music</name><url>http://91.185.206.240:8000/</url></Sky.fm>
-	<Sky.fm><name>Metal</name><url>http://u12b.sky.fm:80/sky_metal</url></Sky.fm>
-	<Sky.fm><name>Modern Blues</name><url>http://u12b.sky.fm:80/sky_modernblues</url></Sky.fm>
-	<Sky.fm><name>Modern Rock</name><url>http://u12b.sky.fm:80/sky_modernrock</url></Sky.fm>
-	<Sky.fm><name>Mostly Classical</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1006</url></Sky.fm>
-	<Sky.fm><name>Movie Soundtracks</name><url>http://80.94.69.106:6774/</url></Sky.fm>
-	<Sky.fm><name>Nature</name><url>http://80.94.69.106:6934/</url></Sky.fm>
-	<Sky.fm><name>New Age</name><url>http://scfire-ntc-aa01.stream.aol.com:80/stream/1002</url></Sky.fm>
-	<Sky.fm><name>Oldies</name><url>http://91.121.3.80:8010/</url></Sky.fm>
-	<Sky.fm><name>Piano Jazz</name><url>http://u12.sky.fm:80/sky_pianojazz</url></Sky.fm>
-	<Sky.fm><name>Pop Punk</name><url>http://u12.sky.fm:80/sky_poppunk</url></Sky.fm>
-	<Sky.fm><name>Relaxation</name><url>http://u12.sky.fm:80/sky_relaxation</url></Sky.fm>
-	<Sky.fm><name>Romantica</name><url>http://u12.sky.fm:80/sky_romantica</url></Sky.fm>
-	<Sky.fm><name>Roots Reggae</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1017</url></Sky.fm>
-	<Sky.fm><name>Salsa</name><url>http://205.188.215.231:8010/</url></Sky.fm>
-	<Sky.fm><name>Ska</name><url>http://u12b.sky.fm:80/sky_ska</url></Sky.fm>
-	<Sky.fm><name>Smooth Jazz 24'7</name><url>http://u12.sky.fm:80/sky_smoothjazz247</url></Sky.fm>
-	<Sky.fm><name>Smooth Jazz</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1010</url></Sky.fm>
-	<Sky.fm><name>Soft Rock</name><url>http://88.191.122.12:6524/</url></Sky.fm>
-	<Sky.fm><name>Solo Piano</name><url>http://scfire-mtc-aa01.stream.aol.com:80/stream/1004</url></Sky.fm>
-	<Sky.fm><name>The Beatles Tribute</name><url>http://72.26.204.18:6824/</url></Sky.fm>
-	<Sky.fm><name>Top Hits</name><url>http://scfire-dtc-aa01.stream.aol.com:80/stream/1014</url></Sky.fm>
-	<Sky.fm><name>Uptempo Smooth Jazz</name><url>http://91.121.3.80:8000/</url></Sky.fm>
-	<Sky.fm><name>Urban Jamz</name><url>http://u12.sky.fm:80/sky_urbanjamz</url></Sky.fm>
-	<Sky.fm><name>Vocal New Age</name><url>http://u12.sky.fm:80/sky_vocalnewage</url></Sky.fm>
-	<Sky.fm><name>Vocal Smooth Jazz</name><url>http://u12.sky.fm:80/sky_vocalsmoothjazz</url></Sky.fm>
-	<Sky.fm><name>World</name><url>http://u12.sky.fm:80/sky_world</url></Sky.fm>
+	<radio name="Absolute" id="x001" />
+	<radio name="Sky FM" id="x002" />
+	<x001>
+		<station name="Absolute Radio 1215AM" url="http://mp3-ar-128.as34763.net:80/" />
+		<station name="Absolute Radio 80s" url="http://mp3-a8-128.as34763.net:80/" />
+		<station name="Absolute Radio 90s" url="http://mp3-a9-128.as34763.net:80/" />
+		<station name="Absolute Radio 00s" url="http://mp3-a0-128.as34763.net:80/" />
+		<station name="Absolute Classic Rock" url="http://mp3-ac-128.as34763.net:80/" />
+	</x001>
+	<x002>
+		<station name="Alternative Rock" url="http://80.94.69.106:6754/" />
+		<station name="American Songbook" url="http://72.26.204.28:6864/" />
+		<station name="Bebop Jazz" url="http://72.26.204.18:6854/" />
+		<station name="Best of the 80's" url="http://scfire-ntc-aa01.stream.aol.com:80/stream/1013" />
+		<station name="Bossa Nova" url="http://80.94.69.106:6804/" />
+		<station name="Classic Rap" url="http://80.94.69.106:6694/" />
+		<station name="Classic Rock" url="http://80.94.69.106:6734/" />
+		<station name="Classical Guitar" url="http://205.188.215.226:8020/" />
+		<station name="Classical Piano Trios" url="http://72.26.204.28:6874/" />
+		<station name="Contemporary Christian" url="http://80.94.69.106:6784/" />
+		<station name="Country" url="http://scfire-dtc-aa01.stream.aol.com:80/stream/1019" />
+		<station name="Dance Hits" url="http://72.26.204.18:6844/" />
+		<station name="DaTempo Lounge" url="http://scfire-mtc-aa01.stream.aol.com:80/stream/2012" />
+		<station name="Dreamscapes" url="http://u12.sky.fm:80/sky_dreamscapes" />
+		<station name="Hard Rock" url="http://u12b.sky.fm:80/sky_hardrock" />
+		<station name="Hit 70's" url="http://scfire-mtc-aa01.stream.aol.com:80/stream/1076" />
+		<station name="Indie Rock" url="http://80.94.69.106:6724/" />
+		<station name="Jazz Classics" url="http://205.188.215.227:8008/" />
+		<station name="Jpop" url="http://80.94.69.106:6914/" />
+		<station name="Love Music" url="http://91.185.206.240:8000/" />
+		<station name="Metal" url="http://u12b.sky.fm:80/sky_metal" />
+		<station name="Modern Blues" url="http://u12b.sky.fm:80/sky_modernblues" />
+		<station name="Modern Rock" url="http://u12b.sky.fm:80/sky_modernrock" />
+		<station name="Mostly Classical" url="http://scfire-dtc-aa01.stream.aol.com:80/stream/1006" />
+		<station name="Movie Soundtracks" url="http://80.94.69.106:6774/" />
+		<station name="Nature" url="http://80.94.69.106:6934/" />
+		<station name="New Age" url="http://scfire-ntc-aa01.stream.aol.com:80/stream/1002" />
+		<station name="Oldies" url="http://91.121.3.80:8010/" />
+		<station name="Piano Jazz" url="http://u12.sky.fm:80/sky_pianojazz" />
+		<station name="Pop Punk" url="http://u12.sky.fm:80/sky_poppunk" />
+		<station name="Relaxation" url="http://u12.sky.fm:80/sky_relaxation" />
+		<station name="Romantica" url="http://u12.sky.fm:80/sky_romantica" />
+		<station name="Roots Reggae" url="http://scfire-dtc-aa01.stream.aol.com:80/stream/1017" />
+		<station name="Salsa" url="http://205.188.215.231:8010/" />
+		<station name="Ska" url="http://u12b.sky.fm:80/sky_ska" />
+		<station name="Smooth Jazz 24'7" url="http://u12.sky.fm:80/sky_smoothjazz247" />
+		<station name="Smooth Jazz" url="http://scfire-dtc-aa01.stream.aol.com:80/stream/1010" />
+		<station name="Soft Rock" url="http://88.191.122.12:6524/" />
+		<station name="Solo Piano" url="http://scfire-mtc-aa01.stream.aol.com:80/stream/1004" />
+		<station name="The Beatles Tribute" url="http://72.26.204.18:6824/" />
+		<station name="Top Hits" url="http://scfire-dtc-aa01.stream.aol.com:80/stream/1014" />
+		<station name="Uptempo Smooth Jazz" url="http://91.121.3.80:8000/" />
+		<station name="Urban Jamz" url="http://u12.sky.fm:80/sky_urbanjamz" />
+		<station name="Vocal New Age" url="http://u12.sky.fm:80/sky_vocalnewage" />
+		<station name="Vocal Smooth Jazz" url="http://u12.sky.fm:80/sky_vocalsmoothjazz" />
+		<station name="World" url="http://u12.sky.fm:80/sky_world" />
+		</x002>
 </database>
