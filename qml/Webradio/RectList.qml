@@ -36,10 +36,11 @@ Rectangle {
                     window.pageStack.push(Qt.resolvedUrl("StationList.qml"), {query: _query})
                 }
                 else {
-                    player.stop();
+                    player.playing = false;
                     window.pageStack.push(Qt.resolvedUrl("RadioPlayer.qml"));
-                    player.source = xmlStation.get(listView.currentIndex).radio_url;
-                    player.play();
+                    player.url  = xmlStation.get(listView.currentIndex).radio_url;
+                    player.name = xmlStation.get(listView.currentIndex).radio_name;
+                    player.playing = true;
                 }
             }
         }

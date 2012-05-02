@@ -12,6 +12,8 @@ class WebRadioPlayer : public QDeclarativeItem
     QString radioName;
     Q_PROPERTY(QString url  READ url  WRITE setUrl )
     QString radioUrl;
+    Q_PROPERTY(bool playing READ playing WRITE setPlaying )
+    bool radioPlaying;
     QMediaPlayer *player;
 
 public:
@@ -19,11 +21,13 @@ public:
     ~WebRadioPlayer();
     QString name() const;
     QString url() const;
+    bool playing() const;
 signals:
     
 public slots:
     void setName(QString str);
     void setUrl(QString str);
+    void setPlaying(bool b);
 };
 
 #endif // WEBRADIOPLAYER_H

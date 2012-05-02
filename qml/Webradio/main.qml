@@ -11,12 +11,8 @@ PageStackWindow {
     showStatusBar: true
     showToolBar: true
 
-    Audio {
-        id: player
-    }
-
     WebRadioPlayer {
-
+        id: player
     }
 
     ToolBarLayout {
