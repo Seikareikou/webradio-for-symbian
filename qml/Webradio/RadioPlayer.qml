@@ -31,7 +31,7 @@ Page {
         y: radioTitle.y + radioTitle.height + parent.height * 0.015 * 2
         color: "#000066"
             Text {
-                text: "Song Info"
+                text: player.title
                 color: "lightblue"
                 font.pixelSize: parent.height * 0.4
                 anchors.centerIn: parent

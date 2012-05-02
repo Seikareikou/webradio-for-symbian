@@ -22,6 +22,16 @@ bool WebRadioPlayer::playing() const {
     return radioPlaying;
 }
 
+QString WebRadioPlayer::artist() {
+    retrieveMetaData();
+    return metaArtist;
+}
+
+QString WebRadioPlayer::title() {
+    retrieveMetaData();
+    return metaTitle;
+}
+
 void WebRadioPlayer::setName(QString str) {
     radioName = str;
 }
@@ -37,4 +47,12 @@ void WebRadioPlayer::setPlaying(bool b) {
         player->play();
     else
         player->stop();
+}
+
+void WebRadioPlayer::retrieveMetaData() {
+    metaArtist = player->metaData(QtMultimediaKit::Author).toString();
+    metaTitle  = player->metaData(QtMultimediaKit::Title).toString();
+    emit titleChanged();
+    qDebug() << 1;
+    qDebug() << metaArtist;
 }
