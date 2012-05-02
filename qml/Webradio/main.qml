@@ -1,5 +1,6 @@
 import QtQuick 1.0
 import QtMultimediaKit 1.1
+import WRP 1.0
 import com.nokia.symbian 1.1
 
 PageStackWindow {
@@ -12,6 +13,10 @@ PageStackWindow {
 
     Audio {
         id: player
+    }
+
+    WebRadioPlayer {
+        name: "oops"
     }
 
     ToolBarLayout {

@@ -27,7 +27,8 @@ MOBILITY += multimedia
 # CONFIG += qtquickcomponents
 
 # The .cpp file which was generated for your project. Feel free to hack it.
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    webradioplayer.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -47,6 +48,9 @@ OTHER_FILES += \
     qml/Webradio/StationListView.qml \
     qml/Webradio/RadioListView.qml \
     qml/Webradio/RectList.qml
+
+HEADERS += \
+    webradioplayer.h
 
 
 
