@@ -16,8 +16,8 @@ Page {
              source: "database.xml"
              query: stationList.query ? stationList.query : "/"
 
-             XmlRole { name: "radio_name"; query: "name/string()" }
-             XmlRole { name: "radio_url";  query: "url/string()"  }
+             XmlRole { name: "radio_name"; query: "@name/string()" }
+             XmlRole { name: "radio_url";  query: "@url/string()"  }
         }
         StationListView {
             id: stationListView

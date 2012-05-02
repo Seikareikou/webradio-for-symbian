@@ -13,7 +13,8 @@ Page {
              source: "database.xml"
              query: "/database/radio"
 
-             XmlRole { name: "genre_name";  query: "name/string()" }
+             XmlRole { name: "genre_name";  query: "@name/string()" }
+             XmlRole { name: "id";  query: "@id/string()" }
         }
         RadioListView {
             id: radioListView
