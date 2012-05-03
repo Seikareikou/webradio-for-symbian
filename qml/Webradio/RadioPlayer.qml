@@ -46,7 +46,7 @@ Page {
             color: "red"
             MouseArea {
                 anchors.fill: parent
-                onClicked: player.addToFavoirite();
+                onClicked: player.addToFavorites();
             }
         }
         Rectangle {

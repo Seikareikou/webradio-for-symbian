@@ -5,7 +5,7 @@
 #include <QString>
 #include <QMediaPlayer>
 #include <QDebug>
-#include "favoirites.h"
+#include "favorites.h"
 
 class WebRadioPlayer : public QDeclarativeItem
 {
@@ -26,8 +26,6 @@ class WebRadioPlayer : public QDeclarativeItem
     Q_PROPERTY(QString title  READ title NOTIFY titleChanged)
     QString metaTitle;
 
-   // Q_INVOKABLE
-
     QMediaPlayer *player;
 
     void retrieveMetaData();
@@ -47,7 +45,7 @@ public slots:
     void setUrl(QString str);
     void setPlaying(bool b);
 
-    void addToFavoirite();
+    void addToFavorites();
 };
 
 #endif // WEBRADIOPLAYER_H

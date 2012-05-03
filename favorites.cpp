@@ -1,12 +1,12 @@
-#include "favoirites.h"
+#include "favorites.h"
 
-Favoirites::Favoirites(QString path)
+Favorites::Favorites(QString path)
 {
     xmlPath = path;
     ReadXmlFile();
 }
 
-void Favoirites::ReadXmlFile()
+void Favorites::ReadXmlFile()
 {
     QFile file(xmlPath);
     if (!file.exists()) qDebug() << "Fav not found";
@@ -18,17 +18,14 @@ void Favoirites::ReadXmlFile()
        if (xml.readNextStartElement()) attributes = xml.attributes();
        if (xml.name().toString() == "station" && !xml.attributes().size()) attributesList << attributes;
     }
-    for (int i=0; i<attributesList.size();++i)
-        qDebug()<<attributesList.at(i).value("name");
     file.close();
 }
 
-void Favoirites::AddToFavoirites(QString name, QString url)
+void Favorites::AddToFavorites(QString name, QString url)
 {
     QFile file(xmlPath);
     file.open(QIODevice::ReadWrite | QIODevice::Text);
     QXmlStreamWriter xml(&file);
-
     xml.setAutoFormatting(true);
     xml.writeStartDocument();
     xml.writeStartElement("database");
@@ -36,8 +33,8 @@ void Favoirites::AddToFavoirites(QString name, QString url)
     xml.writeAttribute("name", name);
     xml.writeAttribute("url", url);
     xml.writeEndElement();
-    xml.writeStartElement("station");
     for (int i=0; i<attributesList.size();++i) {
+        xml.writeStartElement("station");
         xml.writeAttribute("name", attributesList.at(i).value("name").toString());
         xml.writeAttribute("url", attributesList.at(i).value("url").toString());
         xml.writeEndElement();
