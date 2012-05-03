@@ -4,6 +4,7 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
     QDeclarativeItem(parent)
 {
     player = new QMediaPlayer(this);
+    QObject::connect(player, SIGNAL(metaDataAvailableChanged(bool)), this, SLOT(retrieveMetaData()));
 }
 
 WebRadioPlayer::~WebRadioPlayer() {
@@ -23,12 +24,10 @@ bool WebRadioPlayer::playing() const {
 }
 
 QString WebRadioPlayer::artist() {
-    retrieveMetaData();
     return metaArtist;
 }
 
 QString WebRadioPlayer::title() {
-    retrieveMetaData();
     return metaTitle;
 }
 
@@ -50,11 +49,16 @@ void WebRadioPlayer::setPlaying(bool b) {
 }
 
 void WebRadioPlayer::retrieveMetaData() {
-    metaArtist = player->metaData(QtMultimediaKit::Author).toString();
-    metaTitle  = player->metaData(QtMultimediaKit::Title).toString();
-    emit titleChanged();
-    qDebug() << 1;
-    qDebug() << metaArtist;
+    QList<QtMultimediaKit::MetaData> list = player->availableMetaData();
+    QtMultimediaKit::MetaData key;
+    QVariant var;
+    qDebug() << list.size();
+    for (int i = 0; i < list.size(); ++i) {
+        key = list.at(i);
+        var = player->metaData(key);
+        qDebug() << var.toString();
+        qDebug() << i;
+    }
 }
 
 void WebRadioPlayer::addToFavoirite()
