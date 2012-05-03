@@ -1,5 +1,5 @@
-#ifndef FAVOIRITES_H
-#define FAVOIRITES_H
+#ifndef FAVORITES_H
+#define FAVORITES_H
 
 #include <QFile>
 #include <QString>
@@ -8,14 +8,14 @@
 #include <QXmlStreamWriter>
 #include <QDebug>
 
-class Favoirites
+class Favorites
 {
     QList<QXmlStreamAttributes> attributesList;
     QString xmlPath;
     void ReadXmlFile();
 public:
-    Favoirites(QString xmlPath);
-    void AddToFavoirites(QString name, QString url);
+    Favorites(QString xmlPath);
+    void AddToFavorites(QString name, QString url);
 };
 
-#endif // FAVOIRITES_H
+#endif // FAVORITES_H
