@@ -9,7 +9,7 @@ Component {
         Column {
             anchors.verticalCenter: parent.verticalCenter
             Text {
-                text: "<b>" + genre_name + "</b>"
+                text: "<b>" + name + "</b>"
                 x: 10
                 font.pixelSize: 36
                 font.family: "Helvetica"

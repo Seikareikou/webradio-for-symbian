@@ -13,7 +13,7 @@ Page {
              source: "database.xml"
              query: "/database/radio"
 
-             XmlRole { name: "genre_name";  query: "@name/string()" }
+             XmlRole { name: "name";  query: "@name/string()" }
              XmlRole { name: "id";  query: "@id/string()" }
         }
         RadioListView {
@@ -26,7 +26,7 @@ Page {
         RectList {
             model: xmlRadio
             delegate: radioListView
-            fRadio: true
+            fRadio: 0
         }
     }
 }

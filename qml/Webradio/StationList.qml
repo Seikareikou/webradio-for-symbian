@@ -28,7 +28,7 @@ Page {
         RectList {
             model: xmlStation
             delegate: stationListView
-            fRadio: false
+            fRadio: 1
         }
     }
 }

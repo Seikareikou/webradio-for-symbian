@@ -8,24 +8,55 @@ Rectangle {
     color: "#222222"
     clip: true
     Rectangle {
-        id: tab1
+        id: all
         width: parent.width/3
         height: parent.height
         x: 0
         color: "#333333"
+        Text {
+            anchors.centerIn: parent
+            text: "All"
+            font.pixelSize: 24
+            color: "#CCCCCC"
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                window.pageStack.push(Qt.resolvedUrl("RadioList.qml"), {tools: toolBarLayout})
+            }
+        }
     }
     Rectangle {
-        id: tab2
+        id: fave
         width: parent.width/3
         height: parent.height
-        x: tab1.width
+        x: all.width
         color: "#555555"
+        Text {
+            anchors.centerIn: parent
+            text: "Favorite"
+            font.pixelSize: 24
+            color: "#CCCCCC"
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                window.pageStack.push(Qt.resolvedUrl("FavoriteList.qml"))
+            }
+        }
     }
     Rectangle {
-        id: tab3
-        width: parent.width - tab1.width - tab2.width
+        id: recent
+        width: parent.width - all.width - fave.width
         height: parent.height
-        x: parent.width - tab3.width
+        x: parent.width - recent.width
         color: "#777777"
+        Text {
+            anchors.centerIn: parent
+            text: "Recent"
+            font.pixelSize: 24
+            color: "#CCCCCC"
+        }
     }
 }
