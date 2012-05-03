@@ -24,21 +24,40 @@ void Favorites::ReadXmlFile()
 void Favorites::AddToFavorites(QString name, QString url)
 {
     QFile file(xmlPath);
-    file.open(QIODevice::ReadWrite | QIODevice::Text);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
     QXmlStreamWriter xml(&file);
+
     xml.setAutoFormatting(true);
     xml.writeStartDocument();
     xml.writeStartElement("database");
-    xml.writeStartElement("station");
-    xml.writeAttribute("name", name);
-    xml.writeAttribute("url", url);
-    xml.writeEndElement();
-    for (int i=0; i<attributesList.size();++i) {
+
+    if (!CheckStation(name, url)) {
+        xml.writeStartElement("station");
+        xml.writeAttribute("name", name);
+        xml.writeAttribute("url", url);
+        xml.writeEndElement();
+    }
+
+    for (int i=0; i < attributesList.size(); ++i) {
         xml.writeStartElement("station");
         xml.writeAttribute("name", attributesList.at(i).value("name").toString());
         xml.writeAttribute("url", attributesList.at(i).value("url").toString());
         xml.writeEndElement();
     }
+
+    xml.writeEndElement();
     xml.writeEndDocument();
     file.close();
+}
+
+bool Favorites::CheckStation(QString name, QString url)
+{
+    for (int i=0; i < attributesList.size(); ++i) {
+        if (name == attributesList.at(i).value("name").toString() &&
+            url  == attributesList.at(i).value("url").toString()) {
+                attributesList.removeAt(i);
+                return true;
+        }
+    }
+    return false;
 }

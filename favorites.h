@@ -13,6 +13,7 @@ class Favorites
     QList<QXmlStreamAttributes> attributesList;
     QString xmlPath;
     void ReadXmlFile();
+    bool CheckStation(QString name, QString url);
 public:
     Favorites(QString xmlPath);
     void AddToFavorites(QString name, QString url);
