@@ -5,15 +5,26 @@ import com.nokia.symbian 1.1
 
 PageStackWindow {
     id: window
-    initialPage: RadioList {
-
-    }
+    initialPage: radioList
     showStatusBar: true
     showToolBar: true
 
     WebRadioPlayer {
         id: player
+    }
 
+
+    RadioList {
+        id: radioList
+    }
+    RadioPlayer {
+        id: radioPlayer
+    }
+    FavoriteList {
+        id: favoriteList
+    }
+    RecentList {
+        id: recentList
     }
 
     ToolBarLayout {
@@ -29,13 +40,5 @@ PageStackWindow {
             }
         }
     }
-    RadioList {
-        id: radioList
-    }
-    RadioPlayer {
-        id: radioPlayer
-    }
-    FavoriteList {
-        id: favoriteList
-    }
 }
+

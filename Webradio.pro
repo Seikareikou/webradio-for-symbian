@@ -49,7 +49,8 @@ OTHER_FILES += \
     qml/Webradio/StationListView.qml \
     qml/Webradio/RadioListView.qml \
     qml/Webradio/RectList.qml \
-    qml/Webradio/FavoriteList.qml
+    qml/Webradio/FavoriteList.qml \
+    qml/Webradio/RecentList.qml
 
 HEADERS += \
     webradioplayer.h \

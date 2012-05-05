@@ -30,28 +30,50 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
-                if (listRect.fRadio == 0) {
+                console.log(listRect.fRadio)
+                switch (listRect.fRadio) {
+                case 0:
+                {
                     var _query;
                     _query = "/database/" + xmlRadio.get(listView.currentIndex).id + "/station";
                     xmlStation.query = _query;
                     listRect.delegate = stationListView;
                     listRect.model = xmlStation;
-                    fRadio = 1;
+                    listRect.fRadio = 1;
+                    break;
                 }
-                else if (listRect.fRadio == 1) {
+                case 1:
+                {
                     player.playing = false;
                     window.pageStack.push(radioPlayer);
                     player.url  = xmlStation.get(listView.currentIndex).radio_url;
                     player.name = xmlStation.get(listView.currentIndex).radio_name;
                     player.playing = true;
+                    player.addToRecent();
+                    break;
                 }
-                else {
+                case 2:
+                {
                     player.playing = false;
                     window.pageStack.push(radioPlayer);
                     player.url  = xmlFave.get(listView.currentIndex).url;
                     player.name = xmlFave.get(listView.currentIndex).name;
                     player.playing = true;
                     player.addToRecent();
+                    break;
+                }
+                case 3:
+                {
+                    player.playing = false;
+                    window.pageStack.push(radioPlayer);
+                    player.url  = xmlRecent.get(listView.currentIndex).url;
+                    player.name = xmlRecent.get(listView.currentIndex).name;
+                    player.playing = true;
+                    player.addToRecent();
+                    break;
+                }
+                default:
+                    break;
                 }
             }
         }

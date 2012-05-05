@@ -60,5 +60,12 @@ Rectangle {
             font.pixelSize: 24
             color: "#CCCCCC"
         }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                if (window.pageStack.currentPage != recentList)
+                    window.pageStack.replace(recentList);
+            }
+        }
     }
 }
