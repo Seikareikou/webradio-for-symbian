@@ -41,6 +41,7 @@ Rectangle {
                     player.url  = xmlStation.get(listView.currentIndex).radio_url;
                     player.name = xmlStation.get(listView.currentIndex).radio_name;
                     player.playing = true;
+                    player.addToRecent();
                 }
             }
         }
