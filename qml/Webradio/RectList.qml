@@ -30,7 +30,6 @@ Rectangle {
             anchors.fill: parent
             onClicked: {
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
-                console.log(listRect.fRadio)
                 switch (listRect.fRadio) {
                 case 0:
                 {
