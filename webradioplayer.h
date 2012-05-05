@@ -46,6 +46,7 @@ public slots:
     void retrieveMetaData();
 
     void addToFavorites();
+    void addToRecent();
 };
 
 #endif // WEBRADIOPLAYER_H

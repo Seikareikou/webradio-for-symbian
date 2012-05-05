@@ -68,3 +68,11 @@ void WebRadioPlayer::addToFavorites()
     Favorites favorites("D:\\favorite.xml");
     favorites.AddToFavorites(radioName, radioUrl);
 }
+
+void WebRadioPlayer::addToRecent()
+{
+    qDebug()<<radioName;
+    qDebug()<<radioUrl;
+    Favorites recent("D:\\recent.xml");
+    recent.AddToRecent(radioName, radioUrl);
+}

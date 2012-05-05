@@ -51,6 +51,7 @@ Rectangle {
                     player.url  = xmlFave.get(listView.currentIndex).url;
                     player.name = xmlFave.get(listView.currentIndex).name;
                     player.playing = true;
+                    player.addToRecent();
                 }
             }
         }
