@@ -17,7 +17,7 @@ Page {
             y: parent.height * 0.015
             color: "#000033"
             Text {
-                text: "Radio Title"
+                text: "text"
                 color: "lightblue"
                 font.pixelSize: parent.height * 0.4
                 anchors.centerIn: parent

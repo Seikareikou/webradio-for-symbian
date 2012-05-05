@@ -2,7 +2,7 @@
 import QtQuick 1.1
 
 Component {
-    id: radioListView
+    id: stationListView
     Item {
         width: parent.width
         height: 80

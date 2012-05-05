@@ -11,7 +11,7 @@ class WebRadioPlayer : public QDeclarativeItem
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString name READ name WRITE setName)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     QString radioName;
 
     Q_PROPERTY(QString url  READ url  WRITE setUrl )
@@ -38,6 +38,7 @@ public:
 
 signals:
     void titleChanged();
+    void nameChanged();
 public slots:
     void setName(QString str);
     void setUrl(QString str);

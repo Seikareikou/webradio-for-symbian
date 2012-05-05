@@ -23,7 +23,8 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                window.pageStack.push(Qt.resolvedUrl("RadioList.qml"), {tools: toolBarLayout})
+                if (window.pageStack.currentPage != radioList)
+                    window.pageStack.replace(radioList);
             }
         }
     }
@@ -42,7 +43,8 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                window.pageStack.push(Qt.resolvedUrl("FavoriteList.qml"))
+                if (window.pageStack.currentPage != favoriteList)
+                    window.pageStack.replace(favoriteList);
             }
         }
     }

@@ -6,7 +6,7 @@ import com.nokia.symbian 1.1
 PageStackWindow {
     id: window
     initialPage: RadioList {
-        tools: toolBarLayout
+
     }
     showStatusBar: true
     showToolBar: true
@@ -28,5 +28,14 @@ PageStackWindow {
                     window.pageStack.pop();
             }
         }
+    }
+    RadioList {
+        id: radioList
+    }
+    RadioPlayer {
+        id: radioPlayer
+    }
+    FavoriteList {
+        id: favoriteList
     }
 }

@@ -5,6 +5,24 @@ import com.nokia.symbian 1.1
 
 Page {
     id: radioList
+    tools: allBarLayout
+    ToolBarLayout {
+        id: allBarLayout
+        ToolButton {
+            flat: true
+            iconSource: "toolbar-back"
+            onClicked: {
+                if (rectList.model == xmlRadio)
+                    Qt.quit();
+                else {
+                    rectList.model = xmlRadio;
+                    rectList.fRadio = 0;
+                    rectList.delegate = radioListView;
+                }
+            }
+        }
+    }
+
     Rectangle {
         id: radioRect
         anchors.fill: parent
@@ -16,14 +34,25 @@ Page {
              XmlRole { name: "name";  query: "@name/string()" }
              XmlRole { name: "id";  query: "@id/string()" }
         }
+        XmlListModel {
+             id: xmlStation
+             source: "database.xml"
+
+             XmlRole { name: "radio_name"; query: "@name/string()" }
+             XmlRole { name: "radio_url";  query: "@url/string()"  }
+        }
         RadioListView {
             id: radioListView
+        }
+        StationListView {
+            id: stationListView
         }
 
         Tabs {
             id: tabs
         }
         RectList {
+            id: rectList
             model: xmlRadio
             delegate: radioListView
             fRadio: 0
