@@ -13,7 +13,6 @@ PageStackWindow {
         id: player
     }
 
-
     RadioList {
         id: radioList
     }
