@@ -48,6 +48,7 @@ void Favorites::AddToFavorites(QString name, QString url)
     xml.writeEndElement();
     xml.writeEndDocument();
     file.close();
+    SortingXmlFile();
 }
 
 void Favorites::AddToRecent(QString name, QString url)
@@ -91,4 +92,40 @@ bool Favorites::CheckStation(QString name, QString url, bool delIt)
         }
     }
     return false;
+}
+
+bool caseInsensitiveLessThan(const QXmlStreamAttributes &s1, const QXmlStreamAttributes &s2)
+{
+    return s1.value("name").toString().toLower() < s2.value("name").toString().toLower();
+}
+
+void Favorites::SortingAttrList()
+{
+    qSort(attributesList.begin(), attributesList.end(), caseInsensitiveLessThan);
+}
+
+void Favorites::SortingXmlFile()
+{
+    attributesList.clear();
+    ReadXmlFile();
+    SortingAttrList();
+
+    QFile file(xmlPath);
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QXmlStreamWriter xml(&file);
+
+    xml.setAutoFormatting(true);
+    xml.writeStartDocument();
+    xml.writeStartElement("database");
+
+    for (int i=0; i < attributesList.size(); ++i) {
+        xml.writeStartElement("station");
+        xml.writeAttribute("name", attributesList.at(i).value("name").toString());
+        xml.writeAttribute("url", attributesList.at(i).value("url").toString());
+        xml.writeEndElement();
+    }
+
+    xml.writeEndElement();
+    xml.writeEndDocument();
+    file.close();
 }
