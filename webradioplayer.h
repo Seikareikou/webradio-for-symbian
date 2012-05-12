@@ -47,6 +47,8 @@ public slots:
 
     void addToFavorites();
     void addToRecent();
+
+    bool checkPlayerError();
 };
 
 #endif // WEBRADIOPLAYER_H

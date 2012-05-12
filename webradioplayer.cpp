@@ -52,7 +52,6 @@ void WebRadioPlayer::retrieveMetaData() {
     QList<QtMultimediaKit::MetaData> list = player->availableMetaData();
     QtMultimediaKit::MetaData key;
     QVariant var;
-    qDebug() << list.size();
     for (int i = 0; i < list.size(); ++i) {
         key = list.at(i);
         var = player->metaData(key);
@@ -63,16 +62,19 @@ void WebRadioPlayer::retrieveMetaData() {
 
 void WebRadioPlayer::addToFavorites()
 {
-    qDebug()<<radioName;
-    qDebug()<<radioUrl;
     Favorites favorites("D:\\favorite.xml");
     favorites.AddToFavorites(radioName, radioUrl);
 }
 
 void WebRadioPlayer::addToRecent()
 {
-    qDebug()<<radioName;
-    qDebug()<<radioUrl;
     Favorites recent("D:\\recent.xml");
     recent.AddToRecent(radioName, radioUrl);
+}
+
+bool WebRadioPlayer::checkPlayerError()
+{
+    if (player->error() != QMediaPlayer::NoError)
+        return false;
+    return true;
 }

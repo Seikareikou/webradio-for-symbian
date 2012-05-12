@@ -1,5 +1,6 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
+import com.nokia.extras 1.1
 
 Rectangle {
     id: listRect
@@ -14,6 +15,25 @@ Rectangle {
     z: 0
     clip: true
     color: "#CCCCCC"
+    Timer {
+        id: errorChecker
+        interval: 2000
+        onTriggered: {
+            if (!player.checkPlayerError()) {
+                console.log("ERROR");
+                player.playing = false;
+                errorBanner.open();
+            } else {
+                window.pageStack.push(radioPlayer);
+                player.addToRecent();
+            }
+        }
+    }
+    InfoBanner {
+        id: errorBanner
+        timeout: 0
+        text: "<b>Cannot play current radio station.</b>"
+    }
     ListView {
         id: listView
         anchors.fill: parent
@@ -44,31 +64,28 @@ Rectangle {
                 case 1:
                 {
                     player.playing = false;
-                    window.pageStack.push(radioPlayer);
                     player.url  = xmlStation.get(listView.currentIndex).radio_url;
                     player.name = xmlStation.get(listView.currentIndex).radio_name;
                     player.playing = true;
-                    player.addToRecent();
+                    errorChecker.start();
                     break;
                 }
                 case 2:
                 {
                     player.playing = false;
-                    window.pageStack.push(radioPlayer);
                     player.url  = xmlFave.get(listView.currentIndex).url;
                     player.name = xmlFave.get(listView.currentIndex).name;
                     player.playing = true;
-                    player.addToRecent();
+                    errorChecker.start();
                     break;
                 }
                 case 3:
                 {
                     player.playing = false;
-                    window.pageStack.push(radioPlayer);
                     player.url  = xmlRecent.get(listView.currentIndex).url;
                     player.name = xmlRecent.get(listView.currentIndex).name;
                     player.playing = true;
-                    player.addToRecent();
+                    errorChecker.start();
                     break;
                 }
                 default:

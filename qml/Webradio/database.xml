@@ -55,5 +55,7 @@
 		<station name="Vocal New Age" url="http://u12.sky.fm:80/sky_vocalnewage" />
 		<station name="Vocal Smooth Jazz" url="http://u12.sky.fm:80/sky_vocalsmoothjazz" />
 		<station name="World" url="http://u12.sky.fm:80/sky_world" />
-		</x002>
+	</x002>
+	<radio name="Error Ex" id="x003" />
+	<x003><station name="Impossible" url="http://google.com" /></x003>
 </database>
