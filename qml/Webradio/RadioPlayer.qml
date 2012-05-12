@@ -23,7 +23,7 @@ Page {
                 anchors.centerIn: parent
             }
         }
-        Rectangle {
+/*        Rectangle {
         id: songInfo
         width: parent.width - parent.height * 0.015 * 2
         height: parent.height * 0.14
@@ -36,13 +36,13 @@ Page {
                 font.pixelSize: parent.height * 0.4
                 anchors.centerIn: parent
             }
-        }
+        }*/
         Rectangle {
             id: buttonLike
             width: parent.height * 0.13
             height: width
             x: parent.width - parent.height * 0.015 - width
-            y: songInfo.y + songInfo.height + parent.height * 0.015
+            y: radioTitle.y + radioTitle.height + parent.height * 0.015
             color: "red"
             MouseArea {
                 anchors.fill: parent
@@ -70,40 +70,21 @@ Page {
             width: parent.width - parent.height * 0.015 * 2
             height: parent.height * 0.09
             x: parent.height * 0.015
-            y: buttonPlay.y + buttonPlay.height + parent.height * 0.017 * 2
+            y: parent.height - parent.height * 0.017 * 8
+            color: "transparent"
             Slider {
                 maximumValue: 100
                 minimumValue: 0
                 value: 50
                 stepSize: 10
                 valueIndicatorVisible: true
-            }
 
-            Rectangle {
-                height: parent.height
-                width: parent.width * 0.17
-                color: "red"
+                x: muteButton.width
+                width: parent.width - muteButton.width
+            }
+            MuteButton {
+                id: muteButton
             }
         }
-/*        Rectangle {
-            id: buttonBackPlayer
-            width: parent.width
-            height: parent.height * 0.11 < 60 ? 60 : parent.height * 0.11
-            y: parent.height - height
-            color: buttonBackRadio.color
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    playerRect.visible = false;
-                    radioRect.visible = true;
-                }
-            }
-            Text {
-                anchors.centerIn: parent
-                text: "Back"
-                color: "#6699FF"
-                font.pixelSize: parent.height * 0.4
-            }
-        }*/
     }
 }

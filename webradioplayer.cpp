@@ -4,6 +4,8 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
     QDeclarativeItem(parent)
 {
     player = new QMediaPlayer(this);
+    radioVolume = 50;
+    radioMuted = false;
     QObject::connect(player, SIGNAL(metaDataAvailableChanged(bool)), this, SLOT(retrieveMetaData()));
 }
 
@@ -31,8 +33,17 @@ QString WebRadioPlayer::title() {
     return metaTitle;
 }
 
+int WebRadioPlayer::volume() const {
+    return radioVolume;
+}
+
+bool WebRadioPlayer::muted() const {
+    return radioMuted;
+}
+
 void WebRadioPlayer::setName(QString str) {
     radioName = str;
+    emit nameChanged();
 }
 
 void WebRadioPlayer::setUrl(QString str) {
@@ -46,6 +57,18 @@ void WebRadioPlayer::setPlaying(bool b) {
         player->play();
     else
         player->stop();
+}
+
+void WebRadioPlayer::setVolume(int vol) {
+    radioVolume = vol;
+    player->setVolume(radioVolume);
+    emit volumeChanged();
+}
+
+void WebRadioPlayer::setMuted(bool b) {
+    radioMuted = b;
+    player->setMuted(radioMuted);
+    emit mutedChanged();
 }
 
 void WebRadioPlayer::retrieveMetaData() {
