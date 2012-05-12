@@ -61,6 +61,8 @@ public slots:
     void addToRecent();
     bool checkPlayerError();
     void audioChangedSender(bool available);
+
+    bool checkStation(QString name, QString url);
 };
 
 #endif // WEBRADIOPLAYER_H

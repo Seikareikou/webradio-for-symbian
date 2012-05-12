@@ -22,6 +22,7 @@ public:
     Favorites(QString path);
     void AddToFavorites(QString name, QString url);
     void AddToRecent(QString name, QString url);
+    bool CheckStationPresence(QString name, QString url);
 };
 
 #endif // FAVORITES_H

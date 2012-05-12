@@ -98,6 +98,7 @@ void WebRadioPlayer::addToRecent()
 
 bool WebRadioPlayer::checkPlayerError()
 {
+    qDebug() << player->error();
     if (player->error() != QMediaPlayer::NoError)
         return false;
     return true;
@@ -106,4 +107,10 @@ bool WebRadioPlayer::checkPlayerError()
 void WebRadioPlayer::audioChangedSender(bool available)
 {
     if (available) emit audioChanged();
+}
+
+bool WebRadioPlayer::checkStation(QString name, QString url)
+{
+    Favorites favorites("qml\\Webradio\\favorite.xml");
+    return favorites.CheckStationPresence(name, url);
 }

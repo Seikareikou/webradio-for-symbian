@@ -129,3 +129,8 @@ void Favorites::SortingXmlFile()
     xml.writeEndDocument();
     file.close();
 }
+
+bool Favorites::CheckStationPresence(QString name, QString url)
+{
+    return CheckStation(name, url, false);
+}
