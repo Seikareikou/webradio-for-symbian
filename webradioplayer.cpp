@@ -62,13 +62,13 @@ void WebRadioPlayer::retrieveMetaData() {
 
 void WebRadioPlayer::addToFavorites()
 {
-    Favorites favorites("D:\\favorite.xml");
+    Favorites favorites("qml\\Webradio\\favorite.xml");
     favorites.AddToFavorites(radioName, radioUrl);
 }
 
 void WebRadioPlayer::addToRecent()
 {
-    Favorites recent("D:\\recent.xml");
+    Favorites recent("qml\\Webradio\\recent.xml");
     recent.AddToRecent(radioName, radioUrl);
 }
 

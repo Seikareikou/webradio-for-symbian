@@ -5,6 +5,7 @@
 #include <QString>
 #include <QMediaPlayer>
 #include <QDebug>
+#include <QDir>
 #include "favorites.h"
 
 class WebRadioPlayer : public QDeclarativeItem

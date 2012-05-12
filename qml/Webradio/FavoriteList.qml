@@ -15,7 +15,7 @@ Page {
         anchors.fill: parent
         XmlListModel {
              id: xmlFave
-             source: "D:\\favorite.xml"
+             source: "favorite.xml"
              query: "/database/station"
 
              XmlRole { name: "name";  query: "@name/string()" }

@@ -22,7 +22,6 @@ Page {
             }
         }
     }
-
     Rectangle {
         id: radioRect
         anchors.fill: parent

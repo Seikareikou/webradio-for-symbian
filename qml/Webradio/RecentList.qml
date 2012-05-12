@@ -15,7 +15,7 @@ Page {
         anchors.fill: parent
         XmlListModel {
              id: xmlRecent
-             source: "D:\\recent.xml"
+             source: "recent.xml"
              query: "/database/station"
 
              XmlRole { name: "name";  query: "@name/string()" }
