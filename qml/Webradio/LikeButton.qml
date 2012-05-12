@@ -7,7 +7,7 @@ Rectangle {
     height: width
     x: parent.width - parent.height * 0.015 - width
     y: radioTitle.y + radioTitle.height + parent.height * 0.015
-    state: /*Call method to determine state*/ "faved"
+    state: player.isCurrentFave() ? "faved" : "notfaved"
     MouseArea {
         anchors.fill: parent
         onClicked: {

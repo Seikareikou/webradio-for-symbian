@@ -84,6 +84,10 @@ void WebRadioPlayer::retrieveMetaData() {
     }
 }
 
+bool WebRadioPlayer::isCurrentFave() {
+    return checkStation(radioName, radioUrl);
+}
+
 void WebRadioPlayer::addToFavorites()
 {
     Favorites favorites("qml\\Webradio\\favorite.xml");

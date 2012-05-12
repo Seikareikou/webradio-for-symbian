@@ -44,6 +44,7 @@ public:
     QString title();
     int volume() const;
     bool muted() const;
+
 signals:
     void titleChanged();
     void nameChanged();
@@ -63,6 +64,7 @@ public slots:
     void audioChangedSender(bool available);
 
     bool checkStation(QString name, QString url);
+    bool isCurrentFave();
 };
 
 #endif // WEBRADIOPLAYER_H
