@@ -5,6 +5,7 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
 {
     player = new QMediaPlayer(this);
     QObject::connect(player, SIGNAL(metaDataAvailableChanged(bool)), this, SLOT(retrieveMetaData()));
+    QObject::connect(player, SIGNAL(audioAvailableChanged(bool)), this, SLOT(audioChangedSender(bool)));
 }
 
 WebRadioPlayer::~WebRadioPlayer() {
@@ -77,4 +78,9 @@ bool WebRadioPlayer::checkPlayerError()
     if (player->error() != QMediaPlayer::NoError)
         return false;
     return true;
+}
+
+void WebRadioPlayer::audioChangedSender(bool available)
+{
+    if (available) emit audioChanged();
 }

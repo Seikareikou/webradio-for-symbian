@@ -36,20 +36,19 @@ public:
     bool playing() const;
     QString artist();
     QString title();
-
 signals:
     void titleChanged();
     void nameChanged();
+    void audioChanged();
 public slots:
     void setName(QString str);
     void setUrl(QString str);
     void setPlaying(bool b);
     void retrieveMetaData();
-
     void addToFavorites();
     void addToRecent();
-
     bool checkPlayerError();
+    void audioChangedSender(bool available);
 };
 
 #endif // WEBRADIOPLAYER_H
