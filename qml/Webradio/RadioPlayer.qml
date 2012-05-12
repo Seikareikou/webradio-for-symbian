@@ -3,6 +3,18 @@ import QtQuick 1.1
 import com.nokia.symbian 1.1
 
 Page {
+    property variant playing: true //set this to false when pushing player from toolbar button
+
+    onStatusChanged: {
+        if (status == 2) {
+            if (playing == true) {
+                playButton.state = "playing";
+            }
+            playing = true;
+        }
+    }
+
+    id: playerPage
     tools: toolBarLayout
     Rectangle {
         id: playerRect
