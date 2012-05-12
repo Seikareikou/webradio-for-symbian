@@ -7,9 +7,11 @@ Rectangle {
     height: width
     x: parent.width - parent.height * 0.015 - width
     y: radioTitle.y + radioTitle.height + parent.height * 0.015
-    state: player.isCurrentFave() ? "faved" : "notfaved"
     Connections {
-
+        target: player
+        onNameChanged: {
+            buttonLike.state = player.isCurrentFave() ? "faved" : "notfaved";
+        }
     }
 
     MouseArea {

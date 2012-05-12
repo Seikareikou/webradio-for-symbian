@@ -34,6 +34,8 @@ class WebRadioPlayer : public QDeclarativeItem
     bool radioMuted;
 
     QMediaPlayer *player;
+
+    bool checkStation(QString name, QString url);
 public:
     explicit WebRadioPlayer(QDeclarativeItem *parent = 0);
     ~WebRadioPlayer();
@@ -64,7 +66,6 @@ public slots:
     bool checkPlayerError();
     void audioChangedSender(bool available);
 
-    bool checkStation(QString name, QString url);
     bool isCurrentFave();
 };
 
