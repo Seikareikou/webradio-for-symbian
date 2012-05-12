@@ -1,6 +1,7 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import com.nokia.extras 1.1
+import com.nokia.symbian 1.1
 
 Rectangle {
     id: listRect
@@ -15,24 +16,62 @@ Rectangle {
     z: 0
     clip: true
     color: "#CCCCCC"
+    Connections {
+        target: player
+        onAudioChanged: {
+            waitBanner.close();
+            window.pageStack.push(radioPlayer);
+            player.addToRecent();
+        }
+    }
     Timer {
         id: errorChecker
         interval: 2000
         onTriggered: {
             if (!player.checkPlayerError()) {
-                console.log("ERROR");
                 player.playing = false;
-                errorBanner.open();
-            } else {
-                window.pageStack.push(radioPlayer);
-                player.addToRecent();
+                waitBanner.close();
+                errorDialog.open();
             }
         }
     }
+    Dialog {
+        id: errorDialog
+        content:
+            Item {
+                id: name
+                height: 50
+                width: parent.width
+                Text {
+                    id: text
+                    font.pixelSize: 30
+                    anchors.centerIn: parent
+                    color: "white"
+                    text: "Cannot play current station."
+                }
+            }
+        buttons:
+            ButtonRow {
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 100
+
+                Button {
+                    text: "OK";
+                    onClicked: errorDialog.accept()
+                }
+            }
+    }
     InfoBanner {
-        id: errorBanner
+        id: waitBanner
         timeout: 0
-        text: "<b>Cannot play current radio station.</b>"
+        height: 90
+        Text {
+            text: "<b>Loading. Please wait.</b>"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            font.pixelSize: 30
+            color: "white"
+        }
     }
     ListView {
         id: listView
@@ -68,6 +107,7 @@ Rectangle {
                     player.name = xmlStation.get(listView.currentIndex).radio_name;
                     player.playing = true;
                     errorChecker.start();
+                    waitBanner.open();
                     break;
                 }
                 case 2:
@@ -77,6 +117,7 @@ Rectangle {
                     player.name = xmlFave.get(listView.currentIndex).name;
                     player.playing = true;
                     errorChecker.start();
+                    waitBanner.open();
                     break;
                 }
                 case 3:
@@ -86,6 +127,7 @@ Rectangle {
                     player.name = xmlRecent.get(listView.currentIndex).name;
                     player.playing = true;
                     errorChecker.start();
+                    waitBanner.open();
                     break;
                 }
                 default:

@@ -44,13 +44,12 @@ public:
     QString title();
     int volume() const;
     bool muted() const;
-
 signals:
     void titleChanged();
     void nameChanged();
     void volumeChanged();
     void mutedChanged();
-
+    void audioChanged();
 public slots:
     void setName(QString str);
     void setUrl(QString str);
@@ -58,11 +57,10 @@ public slots:
     void retrieveMetaData();
     void setVolume(int vol);
     void setMuted(bool b);
-
     void addToFavorites();
     void addToRecent();
-
     bool checkPlayerError();
+    void audioChangedSender(bool available);
 };
 
 #endif // WEBRADIOPLAYER_H

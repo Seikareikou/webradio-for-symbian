@@ -11,7 +11,7 @@ PageStackWindow {
     showToolBar: true
 
     WebRadioPlayer {
-        id: player
+        id: player  
     }
 
     RadioList {
