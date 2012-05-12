@@ -21,12 +21,6 @@ class WebRadioPlayer : public QDeclarativeItem
     Q_PROPERTY(bool playing READ playing WRITE setPlaying NOTIFY playingChanged)
     bool radioPlaying;
 
-    Q_PROPERTY(QString artist READ artist)
-    QString metaArtist;
-
-    Q_PROPERTY(QString title READ title NOTIFY titleChanged)
-    QString metaTitle;
-
     Q_PROPERTY(int volume READ volume WRITE setVolume NOTIFY volumeChanged)
     int radioVolume;
 
@@ -42,13 +36,10 @@ public:
     QString name() const;
     QString url() const;
     bool playing() const;
-    QString artist();
-    QString title();
     int volume() const;
     bool muted() const;
 
 signals:
-    void titleChanged();
     void nameChanged();
     void playingChanged();
     void volumeChanged();
@@ -58,14 +49,12 @@ public slots:
     void setName(QString str);
     void setUrl(QString str);
     void setPlaying(bool b);
-    void retrieveMetaData();
     void setVolume(int vol);
     void setMuted(bool b);
     void addToFavorites();
     void addToRecent();
     bool checkPlayerError();
     void audioChangedSender(bool available);
-
     bool isCurrentFave();
 };
 

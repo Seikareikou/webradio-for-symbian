@@ -13,7 +13,6 @@ Rectangle {
             buttonLike.state = player.isCurrentFave() ? "faved" : "notfaved";
         }
     }
-
     MouseArea {
         anchors.fill: parent
         onClicked: {
