@@ -17,7 +17,7 @@ Page {
             y: parent.height * 0.015
             color: "#000033"
             Text {
-                text: "text"
+                text: player.name
                 color: "lightblue"
                 font.pixelSize: parent.height * 0.4
                 anchors.centerIn: parent
@@ -51,7 +51,7 @@ Page {
         }
         Rectangle {
             id: buttonPlay
-            width: parent.height * 0.4
+            width: parent.height * 0.5
             radius: width / 2
             smooth: true
             height: width
@@ -73,14 +73,19 @@ Page {
             y: parent.height - parent.height * 0.017 * 8
             color: "transparent"
             Slider {
+                id: volumeSlider
                 maximumValue: 100
                 minimumValue: 0
                 value: 50
-                stepSize: 10
+                stepSize: 1
                 valueIndicatorVisible: true
 
                 x: muteButton.width
                 width: parent.width - muteButton.width
+
+                onValueChanged: {
+                    player.volume = volumeSlider.value;
+                }
             }
             MuteButton {
                 id: muteButton
