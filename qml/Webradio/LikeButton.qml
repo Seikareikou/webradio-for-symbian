@@ -8,6 +8,10 @@ Rectangle {
     x: parent.width - parent.height * 0.015 - width
     y: radioTitle.y + radioTitle.height + parent.height * 0.015
     state: player.isCurrentFave() ? "faved" : "notfaved"
+    Connections {
+
+    }
+
     MouseArea {
         anchors.fill: parent
         onClicked: {

@@ -58,6 +58,7 @@ void WebRadioPlayer::setPlaying(bool b) {
         player->play();
     else
         player->stop();
+    emit playingChanged();
 }
 
 void WebRadioPlayer::setVolume(int vol) {

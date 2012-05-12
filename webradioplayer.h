@@ -18,7 +18,7 @@ class WebRadioPlayer : public QDeclarativeItem
     Q_PROPERTY(QString url READ url WRITE setUrl )
     QString radioUrl;
 
-    Q_PROPERTY(bool playing READ playing WRITE setPlaying )
+    Q_PROPERTY(bool playing READ playing WRITE setPlaying NOTIFY playingChanged)
     bool radioPlaying;
 
     Q_PROPERTY(QString artist READ artist)
@@ -48,6 +48,7 @@ public:
 signals:
     void titleChanged();
     void nameChanged();
+    void playingChanged();
     void volumeChanged();
     void mutedChanged();
     void audioChanged();

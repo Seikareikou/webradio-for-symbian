@@ -10,6 +10,16 @@ Rectangle {
     x: (parent.width - width) / 2
     y: buttonLike.y + buttonLike.height
     color: "black"
+    Connections {
+        target: player
+        onPlayingChanged: {
+            if (player.playing)
+                buttonPlay.state = "playing"
+            else
+                buttonPlay.state = "stopped"
+        }
+    }
+
     MouseArea {
         anchors.fill: parent
         onClicked: {
