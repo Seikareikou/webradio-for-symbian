@@ -26,7 +26,7 @@ Rectangle {
     }
     Timer {
         id: errorChecker
-        interval: 2000
+        interval: 5000
         onTriggered: {
             if (!player.checkPlayerError()) {
                 player.playing = false;
