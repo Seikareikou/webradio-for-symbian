@@ -71,7 +71,14 @@ Page {
             height: parent.height * 0.09
             x: parent.height * 0.015
             y: buttonPlay.y + buttonPlay.height + parent.height * 0.017 * 2
-            color: "yellow"
+            Slider {
+                maximumValue: 100
+                minimumValue: 0
+                value: 50
+                stepSize: 10
+                valueIndicatorVisible: true
+            }
+
             Rectangle {
                 height: parent.height
                 width: parent.width * 0.17
