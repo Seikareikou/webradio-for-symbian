@@ -37,33 +37,11 @@ Page {
                 anchors.centerIn: parent
             }
         }*/
-        Rectangle {
+        LikeButton {
             id: buttonLike
-            width: parent.height * 0.13
-            height: width
-            x: parent.width - parent.height * 0.015 - width
-            y: radioTitle.y + radioTitle.height + parent.height * 0.015
-            color: "red"
-            MouseArea {
-                anchors.fill: parent
-                onClicked: player.addToFavorites();
-            }
         }
-        Rectangle {
-            id: buttonPlay
-            width: parent.height * 0.5
-            radius: width / 2
-            smooth: true
-            height: width
-            x: (parent.width - width) / 2
-            y: buttonLike.y + buttonLike.height
-            color: "black"
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    player.playing = !player.playing;
-                }
-            }
+        PlayButton {
+            id: playButton
         }
         Rectangle {
             id: rectVolume
