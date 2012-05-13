@@ -7,6 +7,17 @@ Rectangle {
     height: width
     x: parent.width - parent.height * 0.015 - width
     y: radioTitle.y + radioTitle.height + parent.height * 0.015
+    color: "transparent"
+    Item {
+        width: parent.width
+        anchors.fill: parent
+        Image {
+            id: background
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectFit
+        }
+    }
+
     Connections {
         target: player
         onNameChanged: {
@@ -24,15 +35,15 @@ Rectangle {
         State {
             name: "faved"
             PropertyChanges {
-                target: buttonLike
-                color: "red"
+                target: background
+                source: ":like.png"
             }
         },
         State {
             name: "notfaved"
             PropertyChanges {
-                target: buttonLike
-                color: "darkred"
+                target: background
+                source: ":notlike.png"
             }
         }
     ]

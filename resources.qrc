@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/pics">
+        <file>qml/Webradio/like.png</file>
+        <file>qml/Webradio/mute.png</file>
+        <file>qml/Webradio/notlike.png</file>
+        <file>qml/Webradio/notmute.png</file>
+        <file>qml/Webradio/play.png</file>
+        <file>qml/Webradio/stop.png</file>
+    </qresource>
+</RCC>

@@ -59,7 +59,8 @@ HEADERS += \
     webradioplayer.h \
     favorites.h
 
-RESOURCES +=
+RESOURCES += \
+    resources.qrc
 
 
 

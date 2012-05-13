@@ -4,12 +4,19 @@ import QtQuick 1.1
 Rectangle {
     id: buttonPlay
     width: parent.height * 0.5
-    radius: width / 2
-    smooth: true
     height: width
     x: (parent.width - width) / 2
     y: buttonLike.y + buttonLike.height
-    color: "black"
+    color: "transparent"
+    Item {
+        width: parent.width
+        anchors.fill: parent
+        Image {
+            id: background
+            anchors.centerIn: parent
+            fillMode: Image.PreserveAspectFit
+        }
+    }
     Connections {
         target: player
         onPlayingChanged: {
@@ -32,8 +39,8 @@ Rectangle {
         State {
             name: "playing"
             PropertyChanges {
-                target: buttonPlay
-                color: "black"
+                target: background
+                source: ":stop.png"
             }
             PropertyChanges {
                 target: player
@@ -43,8 +50,8 @@ Rectangle {
         State {
             name: "stopped"
             PropertyChanges {
-                target: buttonPlay
-                color: "gray"
+                target: background
+                source: ":play.png"
             }
             PropertyChanges {
                 target: player
