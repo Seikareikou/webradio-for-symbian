@@ -95,13 +95,13 @@ bool WebRadioPlayer::isCurrentFave() {
 void WebRadioPlayer::addToFavorites()
 {
     Favorites favorites("qml\\Webradio\\favorite.xml");
-    favorites.AddToFavorites(radioName, radioUrl);
+    favorites.addToFavorites(radioName, radioUrl);
 }
 
 void WebRadioPlayer::addToRecent()
 {
     Favorites recent("qml\\Webradio\\recent.xml");
-    recent.AddToRecent(radioName, radioUrl);
+    recent.addToRecent(radioName, radioUrl);
 }
 
 bool WebRadioPlayer::checkPlayerError()
@@ -114,7 +114,7 @@ bool WebRadioPlayer::checkPlayerError()
 bool WebRadioPlayer::checkStation(QString name, QString url)
 {
     Favorites favorites("qml\\Webradio\\favorite.xml");
-    return favorites.CheckStationPresence(name, url);
+    return favorites.checkStationPresence(name, url);
 }
 
 void WebRadioPlayer::audioChangedSender(bool available)
