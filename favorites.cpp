@@ -3,10 +3,10 @@
 Favorites::Favorites(QString path)
 {
     xmlPath = path;
-    ReadXmlFile();
+    readXmlFile();
 }
 
-void Favorites::ReadXmlFile()
+void Favorites::readXmlFile()
 {
     QFile file(xmlPath);
     if (!file.exists()) qDebug() << "Fav not found";
@@ -21,7 +21,7 @@ void Favorites::ReadXmlFile()
     file.close();
 }
 
-void Favorites::AddToFavorites(QString name, QString url)
+void Favorites::addToFavorites(QString name, QString url)
 {
     QFile file(xmlPath);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
@@ -31,7 +31,7 @@ void Favorites::AddToFavorites(QString name, QString url)
     xml.writeStartDocument();
     xml.writeStartElement("database");
 
-    if (!CheckStation(name, url, true)) {
+    if (!checkStation(name, url, true)) {
         xml.writeStartElement("station");
         xml.writeAttribute("name", name);
         xml.writeAttribute("url", url);
@@ -48,16 +48,16 @@ void Favorites::AddToFavorites(QString name, QString url)
     xml.writeEndElement();
     xml.writeEndDocument();
     file.close();
-    SortingXmlFile();
+    sortingXmlFile();
 }
 
-void Favorites::AddToRecent(QString name, QString url)
+void Favorites::addToRecent(QString name, QString url)
 {
     QFile file(xmlPath);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
     QXmlStreamWriter xml(&file);
 
-    CheckStation(name, url, true);
+    checkStation(name, url, true);
 
     xml.setAutoFormatting(true);
     xml.writeStartDocument();
@@ -82,7 +82,7 @@ void Favorites::AddToRecent(QString name, QString url)
     file.close();
 }
 
-bool Favorites::CheckStation(QString name, QString url, bool delIt)
+bool Favorites::checkStation(QString name, QString url, bool delIt)
 {
     for (int i=0; i < attributesList.size(); ++i) {
         if (name == attributesList.at(i).value("name").toString() &&
@@ -99,16 +99,16 @@ bool caseInsensitiveLessThan(const QXmlStreamAttributes &s1, const QXmlStreamAtt
     return s1.value("name").toString().toLower() < s2.value("name").toString().toLower();
 }
 
-void Favorites::SortingAttrList()
+void Favorites::sortingAttrList()
 {
     qSort(attributesList.begin(), attributesList.end(), caseInsensitiveLessThan);
 }
 
-void Favorites::SortingXmlFile()
+void Favorites::sortingXmlFile()
 {
     attributesList.clear();
-    ReadXmlFile();
-    SortingAttrList();
+    readXmlFile();
+    sortingAttrList();
 
     QFile file(xmlPath);
     file.open(QIODevice::WriteOnly | QIODevice::Text);
@@ -130,7 +130,7 @@ void Favorites::SortingXmlFile()
     file.close();
 }
 
-bool Favorites::CheckStationPresence(QString name, QString url)
+bool Favorites::checkStationPresence(QString name, QString url)
 {
-    return CheckStation(name, url, false);
+    return checkStation(name, url, false);
 }
