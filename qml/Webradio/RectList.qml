@@ -18,20 +18,24 @@ Rectangle {
     color: "#CCCCCC"
     Connections {
         target: player
+        ignoreUnknownSignals: true
         onAudioChanged: {
-            waitBanner.close();
-            window.pageStack.push(radioPlayer);
-            player.addToRecent();
+            if (!player.signalsFilter()) {
+                waitBanner.close();
+                window.pageStack.push(radioPlayer);
+                player.addToRecent();
+            }
         }
-    }
-    Timer {
-        id: errorChecker
-        interval: 5000
-        onTriggered: {
-            if (!player.checkPlayerError()) {
+        onErrorFound: {
+            if (!player.signalsFilter()) {
                 player.playing = false;
                 waitBanner.close();
                 errorDialog.open();
+            }
+        }
+        onStChanged: {
+            if (!player.signalsFilter()) {
+                waitBanner.open();
             }
         }
     }
@@ -54,7 +58,6 @@ Rectangle {
             ButtonRow {
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: 100
-
                 Button {
                     text: "OK";
                     onClicked: errorDialog.accept()
@@ -106,8 +109,6 @@ Rectangle {
                     player.url  = xmlStation.get(listView.currentIndex).radio_url;
                     player.name = xmlStation.get(listView.currentIndex).radio_name;
                     player.playing = true;
-                    errorChecker.start();
-                    waitBanner.open();
                     break;
                 }
                 case 2:
@@ -116,8 +117,6 @@ Rectangle {
                     player.url  = xmlFave.get(listView.currentIndex).url;
                     player.name = xmlFave.get(listView.currentIndex).name;
                     player.playing = true;
-                    errorChecker.start();
-                    waitBanner.open();
                     break;
                 }
                 case 3:
@@ -126,8 +125,6 @@ Rectangle {
                     player.url  = xmlRecent.get(listView.currentIndex).url;
                     player.name = xmlRecent.get(listView.currentIndex).name;
                     player.playing = true;
-                    errorChecker.start();
-                    waitBanner.open();
                     break;
                 }
                 default:
