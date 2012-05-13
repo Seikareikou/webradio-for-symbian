@@ -34,8 +34,10 @@ class WebRadioPlayer : public QDeclarativeItem
     bool radioMuted;
 
     QMediaPlayer *player;
+    int signalsFilterCount;
 
     bool checkStation(QString name, QString url);
+
 public:
     explicit WebRadioPlayer(QDeclarativeItem *parent = 0);
     ~WebRadioPlayer();
@@ -54,6 +56,9 @@ signals:
     void volumeChanged();
     void mutedChanged();
     void audioChanged();
+    void errorFound();
+    void stChanged();
+
 public slots:
     void setName(QString str);
     void setUrl(QString str);
@@ -65,8 +70,10 @@ public slots:
     void addToRecent();
     bool checkPlayerError();
     void audioChangedSender(bool available);
-
+    void errorFoundSender(QMediaPlayer::Error error);
+    void stateChangedSender(QMediaPlayer::State state);
     bool isCurrentFave();
+    int signalsFilter();
 };
 
 #endif // WEBRADIOPLAYER_H

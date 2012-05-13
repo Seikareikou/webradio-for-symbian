@@ -6,8 +6,11 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
     player = new QMediaPlayer(this);
     radioVolume = 50;
     radioMuted = false;
+    signalsFilterCount = 0;
     QObject::connect(player, SIGNAL(metaDataAvailableChanged(bool)), this, SLOT(retrieveMetaData()));
     QObject::connect(player, SIGNAL(audioAvailableChanged(bool)), this, SLOT(audioChangedSender(bool)));
+    QObject::connect(player, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(errorFoundSender(QMediaPlayer::Error)));
+    QObject::connect(player, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(stateChangedSender(QMediaPlayer::State)));
 }
 
 WebRadioPlayer::~WebRadioPlayer() {
@@ -103,10 +106,15 @@ void WebRadioPlayer::addToRecent()
 
 bool WebRadioPlayer::checkPlayerError()
 {
-    qDebug() << player->error();
     if (player->error() != QMediaPlayer::NoError)
         return false;
     return true;
+}
+
+bool WebRadioPlayer::checkStation(QString name, QString url)
+{
+    Favorites favorites("qml\\Webradio\\favorite.xml");
+    return favorites.CheckStationPresence(name, url);
 }
 
 void WebRadioPlayer::audioChangedSender(bool available)
@@ -114,8 +122,20 @@ void WebRadioPlayer::audioChangedSender(bool available)
     if (available) emit audioChanged();
 }
 
-bool WebRadioPlayer::checkStation(QString name, QString url)
+int WebRadioPlayer::signalsFilter()
 {
-    Favorites favorites("qml\\Webradio\\favorite.xml");
-    return favorites.CheckStationPresence(name, url);
+    if (signalsFilterCount == 3) signalsFilterCount = 0;
+    return signalsFilterCount++;
+}
+
+void WebRadioPlayer::errorFoundSender(QMediaPlayer::Error error)
+{
+    if (error != QMediaPlayer::NoError)
+        emit errorFound();
+}
+
+void WebRadioPlayer::stateChangedSender(QMediaPlayer::State state)
+{
+    if (state == QMediaPlayer::PlayingState)
+        emit stChanged();
 }
