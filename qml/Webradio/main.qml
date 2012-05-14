@@ -26,19 +26,14 @@ PageStackWindow {
     RecentList {
         id: recentList
     }
-
-    ToolBarLayout {
+    MainToolbar {
         id: toolBarLayout
-        ToolButton {
-            flat: true
-            iconSource: "toolbar-back"
-            onClicked: {
-                if (window.pageStack.depth <= 1)
-                    Qt.quit()
-                else
-                    window.pageStack.pop();
-            }
-        }
+    }
+    MainMenu {
+        id: mainMenu
+    }
+    AboutDialog {
+        id: aboutDialog
     }
 }
 

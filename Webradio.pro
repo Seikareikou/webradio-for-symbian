@@ -53,7 +53,10 @@ OTHER_FILES += \
     qml/Webradio/RecentList.qml \
     qml/Webradio/MuteButton.qml \
     qml/Webradio/PlayButton.qml \
-    qml/Webradio/LikeButton.qml
+    qml/Webradio/LikeButton.qml \
+    qml/Webradio/MainToolbar.qml \
+    qml/Webradio/MainMenu.qml \
+    qml/Webradio/AboutDialog.qml
 
 HEADERS += \
     webradioplayer.h \

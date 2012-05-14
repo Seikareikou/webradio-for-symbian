@@ -5,22 +5,9 @@ import com.nokia.symbian 1.1
 
 Page {
     id: radioList
-    tools: allBarLayout
-    ToolBarLayout {
-        id: allBarLayout
-        ToolButton {
-            flat: true
-            iconSource: "toolbar-back"
-            onClicked: {
-                if (rectList.model == xmlRadio)
-                    Qt.quit();
-                else {
-                    rectList.model = xmlRadio;
-                    rectList.fRadio = 0;
-                    rectList.delegate = radioListView;
-                }
-            }
-        }
+    tools: radioToolBar
+    MainToolbar {
+        id: radioToolBar
     }
     Rectangle {
         id: radioRect

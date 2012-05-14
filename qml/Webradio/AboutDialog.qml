@@ -3,13 +3,14 @@ import QtQuick 1.1
 import com.nokia.symbian 1.1
 
 Dialog {
-    id: errorDialog
+    id: aboutDialog
     title:
         Text {
-            text: "Error"
+            text: "About"
             color: "white"
             anchors.centerIn: parent
         }
+
     content:
         Item {
             id: name
@@ -20,7 +21,7 @@ Dialog {
                 font.pixelSize: 30
                 anchors.centerIn: parent
                 color: "white"
-                text: "Cannot play current station."
+                text: "yar.fruct.org"
             }
         }
     buttons:
@@ -29,7 +30,7 @@ Dialog {
             width: 100
             Button {
                 text: "OK";
-                onClicked: errorDialog.accept()
+                onClicked: aboutDialog.accept()
             }
         }
 }
