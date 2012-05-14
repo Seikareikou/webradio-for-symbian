@@ -34,7 +34,8 @@ Rectangle {
             }
         }
         onStChanged: {
-            if (!player.signalsFilter()) {
+            if (!player.signalsFilter() &&
+                window.pageStack.currentPage != radioPlayer) {
                 waitBanner.open();
             }
         }
