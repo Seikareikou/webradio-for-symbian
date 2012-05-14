@@ -10,6 +10,7 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
     QObject::connect(player, SIGNAL(audioAvailableChanged(bool)), this, SLOT(audioChangedSender(bool)));
     QObject::connect(player, SIGNAL(error(QMediaPlayer::Error)), this, SLOT(errorFoundSender(QMediaPlayer::Error)));
     QObject::connect(player, SIGNAL(stateChanged(QMediaPlayer::State)), this, SLOT(stateChangedSender(QMediaPlayer::State)));
+    QObject::connect(player, SIGNAL(bufferStatusChanged(int)), this, SLOT(networkChangedSender()));
 }
 
 WebRadioPlayer::~WebRadioPlayer() {
@@ -117,4 +118,9 @@ void WebRadioPlayer::stateChangedSender(QMediaPlayer::State state)
 {
     if (state == QMediaPlayer::PlayingState)
         emit stChanged();
+}
+
+void WebRadioPlayer::networkChangedSender()
+{
+    emit networkStatusChanged();
 }

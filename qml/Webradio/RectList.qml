@@ -1,7 +1,5 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
-import com.nokia.extras 1.1
-import com.nokia.symbian 1.1
 
 Rectangle {
     id: listRect
@@ -28,6 +26,8 @@ Rectangle {
         }
         onErrorFound: {
             if (!player.signalsFilter()) {
+                if (window.pageStack.currentPage == radioPlayer)
+                    window.pageStack.pop();
                 player.playing = false;
                 waitBanner.close();
                 errorDialog.open();
@@ -39,43 +39,21 @@ Rectangle {
                 waitBanner.open();
             }
         }
-    }
-    Dialog {
-        id: errorDialog
-        content:
-            Item {
-                id: name
-                height: 50
-                width: parent.width
-                Text {
-                    id: text
-                    font.pixelSize: 30
-                    anchors.centerIn: parent
-                    color: "white"
-                    text: "Cannot play current station."
-                }
+        onNetworkStatusChanged: {
+            if (!player.signalsFilter()) {
+                player.playing = false;
+                networkError.open();
             }
-        buttons:
-            ButtonRow {
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: 100
-                Button {
-                    text: "OK";
-                    onClicked: errorDialog.accept()
-                }
-            }
-    }
-    InfoBanner {
-        id: waitBanner
-        timeout: 0
-        height: 90
-        Text {
-            text: "<b>Loading. Please wait.</b>"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: 30
-            color: "white"
         }
+    }
+    NetworkError {
+        id: networkError
+    }
+    ErrorDialog {
+        id: errorDialog
+    }
+    WaitBanner {
+        id: waitBanner
     }
     ListView {
         id: listView
