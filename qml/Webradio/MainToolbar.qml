@@ -18,8 +18,26 @@ ToolBarLayout {
         }
     }
     ToolButton {
+        id: toolPlay
+        flat: true
+        iconSource: "toolbar-mediacontrol-play"
+        onClicked: {
+            if (window.pageStack.currentPage !== radioPlayer)
+                window.pageStack.push(radioPlayer)
+        }
+    }
+    ToolButton {
         flat: true
         iconSource: "toolbar-menu"
         onClicked: mainMenu.open()
+    }
+    Connections {
+        target: player
+        onPlayingChanged: {
+            if (player.playing === true)
+                toolPlay.iconSource = "toolbar-mediacontrol-play"
+            else
+                toolPlay.iconSource = "toolbar-mediacontrol-stop"
+        }
     }
 }
