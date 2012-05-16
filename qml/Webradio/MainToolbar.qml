@@ -28,7 +28,7 @@ ToolBarLayout {
     }
     ToolButton {
         flat: true
-        text: "Hide"
+        iconSource: "toolbar-home"
         onClicked: QmlApplicationViewer.showMinimized();
     }
     ToolButton {
