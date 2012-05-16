@@ -84,20 +84,20 @@ Rectangle {
                 }
                 case 2:
                 {
-                    if (player.url != xmlFave.get(listView.currentIndex).url) {
+                    if (player.url != xmlFave.get(listView.currentIndex).radio_url) {
                         player.playing = false;
-                        player.url  = xmlFave.get(listView.currentIndex).url;
-                        player.name = xmlFave.get(listView.currentIndex).name;
+                        player.url  = xmlFave.get(listView.currentIndex).radio_url;
+                        player.name = xmlFave.get(listView.currentIndex).radio_name;
                         player.playing = true;
                     } else window.pageStack.push(radioPlayer);
                     break;
                 }
                 case 3:
                 {
-                    if (player.url != xmlRecent.get(listView.currentIndex).url) {
+                    if (player.url != xmlRecent.get(listView.currentIndex).radio_url) {
                         player.playing = false;
-                        player.url  = xmlRecent.get(listView.currentIndex).url;
-                        player.name = xmlRecent.get(listView.currentIndex).name;
+                        player.url  = xmlRecent.get(listView.currentIndex).radio_url;
+                        player.name = xmlRecent.get(listView.currentIndex).radio_name;
                         player.playing = true;
                     } else window.pageStack.push(radioPlayer);
                     break;
