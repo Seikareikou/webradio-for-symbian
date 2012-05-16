@@ -7,7 +7,7 @@ ToolBarLayout {
     ToolButton {
         id: toolbarBack
         flat: true
-        visible: false
+        enabled: false
         iconSource: "toolbar-back"
         onClicked: {
             if (window.pageStack.depth > 1)
@@ -23,9 +23,9 @@ ToolBarLayout {
             onStatusChanged: {
                 if (radioList.status === 2) {
                     if (rectList.model !== xmlStations)
-                        toolbarBack.visible = false
+                        toolbarBack.enabled = false
                     else
-                        toolbarBack.visible = true
+                        toolbarBack.enabled = true
                 }
             }
         }
@@ -33,30 +33,30 @@ ToolBarLayout {
             target: rectList
             onModelChanged: {
                 if (rectList.model !== xmlStation)
-                    toolbarBack.visible = false
+                    toolbarBack.enabled = false
                 else
-                    toolbarBack.visible = true
+                    toolbarBack.enabled = true
             }
         }
         Connections {
             target: radioPlayer
             onStatusChanged: {
                 if (radioPlayer.status === 2)
-                    toolbarBack.visible = true
+                    toolbarBack.enabled = true
             }
         }
         Connections {
             target: favoriteList
             onStatusChanged: {
                 if (favoriteList.status === 2)
-                    toolbarBack.visible = false
+                    toolbarBack.enabled = false
             }
         }
         Connections {
             target: recentList
             onStatusChanged: {
                 if (recentList.status === 2)
-                    toolbarBack.visible = false
+                    toolbarBack.enabled = false
             }
         }
     }
