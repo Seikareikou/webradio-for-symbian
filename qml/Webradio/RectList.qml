@@ -19,8 +19,8 @@ Rectangle {
         ignoreUnknownSignals: true
         onAudioChanged: {
             if (!player.signalsFilter()) {
-                waitBanner.close();
                 window.pageStack.push(radioPlayer);
+                waitBanner.close();
                 player.addToRecent();
             }
         }
@@ -39,15 +39,6 @@ Rectangle {
                 waitBanner.open();
             }
         }
-        onNetworkStatusChanged: {
-            if (!player.signalsFilter()) {
-                player.playing = false;
-                networkError.open();
-            }
-        }
-    }
-    NetworkError {
-        id: networkError
     }
     ErrorDialog {
         id: errorDialog
@@ -84,26 +75,32 @@ Rectangle {
                 }
                 case 1:
                 {
-                    player.playing = false;
-                    player.url  = xmlStation.get(listView.currentIndex).radio_url;
-                    player.name = xmlStation.get(listView.currentIndex).radio_name;
-                    player.playing = true;
+                    if (player.url != xmlStation.get(listView.currentIndex).radio_url) {
+                        player.playing = false;
+                        player.url  = xmlStation.get(listView.currentIndex).radio_url;
+                        player.name = xmlStation.get(listView.currentIndex).radio_name;
+                        player.playing = true;
+                    } else window.pageStack.push(radioPlayer);
                     break;
                 }
                 case 2:
                 {
-                    player.playing = false;
-                    player.url  = xmlFave.get(listView.currentIndex).url;
-                    player.name = xmlFave.get(listView.currentIndex).name;
-                    player.playing = true;
+                    if (player.url != xmlFave.get(listView.currentIndex).url) {
+                        player.playing = false;
+                        player.url  = xmlFave.get(listView.currentIndex).url;
+                        player.name = xmlFave.get(listView.currentIndex).name;
+                        player.playing = true;
+                    } else window.pageStack.push(radioPlayer);
                     break;
                 }
                 case 3:
                 {
-                    player.playing = false;
-                    player.url  = xmlRecent.get(listView.currentIndex).url;
-                    player.name = xmlRecent.get(listView.currentIndex).name;
-                    player.playing = true;
+                    if (player.url != xmlRecent.get(listView.currentIndex).url) {
+                        player.playing = false;
+                        player.url  = xmlRecent.get(listView.currentIndex).url;
+                        player.name = xmlRecent.get(listView.currentIndex).name;
+                        player.playing = true;
+                    } else window.pageStack.push(radioPlayer);
                     break;
                 }
                 default:

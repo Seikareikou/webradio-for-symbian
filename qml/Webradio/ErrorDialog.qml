@@ -16,11 +16,9 @@ Dialog {
             height: 50
             width: parent.width
             Text {
-                id: text
-                font.pixelSize: 30
-                anchors.centerIn: parent
+                font.pixelSize: 28
                 color: "white"
-                text: "Cannot play current station."
+                text: "Cannot play current station.<br />Check your connection."
             }
         }
     buttons:
