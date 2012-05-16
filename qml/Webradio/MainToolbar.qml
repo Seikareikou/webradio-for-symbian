@@ -13,6 +13,7 @@ ToolBarLayout {
                 window.pageStack.pop();
             if (stationRectList.x === 0) {
                 stationRectList.x = stationRectList.parent.width;
+                window.tabText = "All"
             }
         }
     }

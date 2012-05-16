@@ -18,10 +18,10 @@ Page {
              source: "favorite.xml"
              query: "/database/station"
 
-             XmlRole { name: "name";  query: "@name/string()" }
-             XmlRole { name: "url";  query: "@url/string()" }
+             XmlRole { name: "radio_name";  query: "@name/string()" }
+             XmlRole { name: "radio_url";  query: "@url/string()" }
         }
-        RadioListView {
+        StationListView {
             id: favoriteListView
         }
 

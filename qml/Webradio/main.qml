@@ -10,6 +10,8 @@ PageStackWindow {
     showStatusBar: true
     showToolBar: true
 
+    property variant tabText: "All"
+
     WebRadioPlayer {
         id: player  
     }

@@ -35,7 +35,7 @@ Rectangle {
         }
         Button {
             id: all
-            text: "All"
+            text: window.tabText
             height: parent.height
             onClicked: {
                 if (window.pageStack.currentPage !== radioList)

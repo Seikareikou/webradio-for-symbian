@@ -69,6 +69,7 @@ Rectangle {
                     _query = "/database/" + xmlRadio.get(listView.currentIndex).id + "/station";
                     xmlStation.query = _query;
                     stationRectList.x = 0;
+                    window.tabText = xmlRadio.get(listView.currentIndex).name;
                     break;
                 }
                 case 1:
