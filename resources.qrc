@@ -6,5 +6,6 @@
         <file>qml/Webradio/notmute.png</file>
         <file>qml/Webradio/play.png</file>
         <file>qml/Webradio/stop.png</file>
+        <file>qml/Webradio/dislike.png</file>
     </qresource>
 </RCC>
