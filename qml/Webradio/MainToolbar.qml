@@ -28,6 +28,11 @@ ToolBarLayout {
     }
     ToolButton {
         flat: true
+        text: "Hide"
+        onClicked: QmlApplicationViewer.showMinimized();
+    }
+    ToolButton {
+        flat: true
         iconSource: "toolbar-menu"
         onClicked: mainMenu.open()
     }

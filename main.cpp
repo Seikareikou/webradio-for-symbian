@@ -10,6 +10,9 @@ int main(int argc, char *argv[])
     qmlRegisterType<WebRadioPlayer>("WRP", 1, 0, "WebRadioPlayer");
 
     QmlApplicationViewer viewer;
+
+    viewer.rootContext()->setContextProperty("QmlApplicationViewer", (QObject *)&viewer);
+
     viewer.setOrientation(QmlApplicationViewer::ScreenOrientationLockPortrait);
     viewer.setMainQmlFile(QLatin1String("qml/Webradio/main.qml"));
     viewer.showExpanded();
