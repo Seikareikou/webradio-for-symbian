@@ -13,7 +13,7 @@ ToolBarLayout {
                 window.pageStack.pop();
             if (stationRectList.x === 0) {
                 stationRectList.x = stationRectList.parent.width;
-                window.tabText = "All"
+                window.tabText = "All";
             }
         }
     }
@@ -23,7 +23,7 @@ ToolBarLayout {
         iconSource: "toolbar-mediacontrol-play"
         onClicked: {
             if (window.pageStack.currentPage !== radioPlayer)
-                window.pageStack.push(radioPlayer)
+                window.pageStack.push(radioPlayer);
         }
     }
     ToolButton {

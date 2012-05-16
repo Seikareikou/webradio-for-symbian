@@ -28,20 +28,6 @@ Page {
                 anchors.centerIn: parent
             }
         }
-/*        Rectangle {
-        id: songInfo
-        width: parent.width - parent.height * 0.015 * 2
-        height: parent.height * 0.14
-        x: parent.height * 0.015
-        y: radioTitle.y + radioTitle.height + parent.height * 0.015 * 2
-        color: "#000066"
-            Text {
-                text: player.title
-                color: "lightblue"
-                font.pixelSize: parent.height * 0.4
-                anchors.centerIn: parent
-            }
-        }*/
         LikeButton {
             id: buttonLike
         }

@@ -103,7 +103,7 @@ void WebRadioPlayer::audioChangedSender(bool available)
 
 int WebRadioPlayer::signalsFilter()
 {
-    if (signalsFilterCount == 3) signalsFilterCount = 0;
+    if (signalsFilterCount == 4) signalsFilterCount = 0;
     return signalsFilterCount++;
 }
 
