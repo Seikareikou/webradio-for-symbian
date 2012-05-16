@@ -50,8 +50,6 @@ signals:
     void errorFound();
     void stChanged();
 
-    void networkStatusChanged();
-
 public slots:
     void setName(QString str);
     void setUrl(QString str);
@@ -66,8 +64,6 @@ public slots:
     void stateChangedSender(QMediaPlayer::State state);
     bool isCurrentFave();
     int signalsFilter();
-
-    void networkChangedSender();
 };
 
 #endif // WEBRADIOPLAYER_H
