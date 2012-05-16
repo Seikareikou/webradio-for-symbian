@@ -68,9 +68,7 @@ Rectangle {
                     var _query;
                     _query = "/database/" + xmlRadio.get(listView.currentIndex).id + "/station";
                     xmlStation.query = _query;
-                    listRect.delegate = stationListView;
-                    listRect.model = xmlStation;
-                    listRect.fRadio = 1;
+                    stationRectList.x = 0;
                     break;
                 }
                 case 1:

@@ -43,5 +43,17 @@ Page {
             delegate: radioListView
             fRadio: 0
         }
+        RectList {
+            id: stationRectList
+            delegate: stationListView
+            model: xmlStation
+            fRadio: 1
+
+            x: parent.width
+            Behavior on x {
+                PropertyAnimation {
+                }
+            }
+        }
     }
 }

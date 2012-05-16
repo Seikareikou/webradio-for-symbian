@@ -7,56 +7,12 @@ ToolBarLayout {
     ToolButton {
         id: toolbarBack
         flat: true
-        enabled: false
         iconSource: "toolbar-back"
         onClicked: {
             if (window.pageStack.depth > 1)
                 window.pageStack.pop();
-            if (rectList.model !== xmlRadio) {
-                rectList.model = xmlRadio;
-                rectList.fRadio = 0;
-                rectList.delegate = radioListView;
-            }
-        }
-        Connections {
-            target: radioList
-            onStatusChanged: {
-                if (radioList.status === 2) {
-                    if (rectList.model !== xmlStations)
-                        toolbarBack.enabled = false
-                    else
-                        toolbarBack.enabled = true
-                }
-            }
-        }
-        Connections {
-            target: rectList
-            onModelChanged: {
-                if (rectList.model !== xmlStation)
-                    toolbarBack.enabled = false
-                else
-                    toolbarBack.enabled = true
-            }
-        }
-        Connections {
-            target: radioPlayer
-            onStatusChanged: {
-                if (radioPlayer.status === 2)
-                    toolbarBack.enabled = true
-            }
-        }
-        Connections {
-            target: favoriteList
-            onStatusChanged: {
-                if (favoriteList.status === 2)
-                    toolbarBack.enabled = false
-            }
-        }
-        Connections {
-            target: recentList
-            onStatusChanged: {
-                if (recentList.status === 2)
-                    toolbarBack.enabled = false
+            if (stationRectList.x === 0) {
+                stationRectList.x = stationRectList.parent.width;
             }
         }
     }
