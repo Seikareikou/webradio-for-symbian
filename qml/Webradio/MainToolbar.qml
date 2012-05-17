@@ -33,7 +33,12 @@ ToolBarLayout {
         flat: true
         enabled: toolBarLayout.enablePlay
         iconSource: "toolbar-mediacontrol-play"
-        onClicked: window.pageStack.push(radioPlayer);
+        onClicked: {
+            if (player.name)
+                window.pageStack.push(radioPlayer);
+            else
+                emptyRadioDialog.open();
+        }
     }
     ToolButton {
         flat: true

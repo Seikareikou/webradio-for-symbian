@@ -38,5 +38,9 @@ PageStackWindow {
     ExitDialog {
         id: exitDialog
     }
+    ErrorDialog {
+        id: emptyRadioDialog
+        message: "No radio station is selected\n"
+    }
 }
 

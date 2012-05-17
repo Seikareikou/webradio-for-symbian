@@ -5,6 +5,7 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
 {
     player = new QMediaPlayer(this);
     radioVolume = 50;
+    player->setVolume(50);
     radioMuted = false;
     signalsFilterCount = 0;
     QObject::connect(player, SIGNAL(audioAvailableChanged(bool)), this, SLOT(audioChangedSender(bool)));
