@@ -4,6 +4,9 @@ import com.nokia.symbian 1.1
 
 ToolBarLayout {
     id: toolBarLayout
+
+    property variant enablePlay: true
+
     ToolButton {
         id: toolbarBack
         flat: true
@@ -28,11 +31,9 @@ ToolBarLayout {
     ToolButton {
         id: toolPlay
         flat: true
+        enabled: toolBarLayout.enablePlay
         iconSource: "toolbar-mediacontrol-play"
-        onClicked: {
-            if (window.pageStack.currentPage !== radioPlayer)
-                window.pageStack.push(radioPlayer);
-        }
+        onClicked: window.pageStack.push(radioPlayer);
     }
     ToolButton {
         flat: true

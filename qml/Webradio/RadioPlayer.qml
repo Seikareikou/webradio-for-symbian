@@ -4,7 +4,11 @@ import com.nokia.symbian 1.1
 
 Page {
     id: playerPage
-    tools: toolBarLayout
+    tools: playerBarLayout
+    MainToolbar {
+        id: playerBarLayout
+        enablePlay: false
+    }
     Rectangle {
         id: playerRect
         anchors.fill: parent
