@@ -11,9 +11,17 @@ ToolBarLayout {
         onClicked: {
             if (window.pageStack.depth > 1)
                 window.pageStack.pop();
-            if (stationRectList.x === 0) {
-                stationRectList.x = stationRectList.parent.width;
-                window.tabText = "All";
+            else {
+                if (window.pageStack.currentPage === radioList) {
+                    if (stationRectList.x === 0) {
+                        stationRectList.x = stationRectList.parent.width;
+                        window.tabText = "All";
+                    }
+                    else
+                        exitDialog.open();
+                }
+                else
+                    exitDialog.open();
             }
         }
     }

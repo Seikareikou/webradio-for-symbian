@@ -35,5 +35,8 @@ PageStackWindow {
     AboutDialog {
         id: aboutDialog
     }
+    ExitDialog {
+        id: exitDialog
+    }
 }
 

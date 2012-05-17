@@ -60,7 +60,8 @@ OTHER_FILES += \
     qml/Webradio/LikeButton.qml \
     qml/Webradio/MainToolbar.qml \
     qml/Webradio/MainMenu.qml \
-    qml/Webradio/AboutDialog.qml
+    qml/Webradio/AboutDialog.qml \
+    qml/Webradio/ExitDialog.qml
 
 HEADERS += \
     webradioplayer.h \
