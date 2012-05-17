@@ -43,7 +43,7 @@ Rectangle {
             name: "notfaved"
             PropertyChanges {
                 target: background
-                source: ":dislike.png"
+                source: ":dislike_2.png"
             }
         }
     ]

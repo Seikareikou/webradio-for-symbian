@@ -5,10 +5,6 @@ import com.nokia.symbian 1.1
 Page {
     id: playerPage
     tools: toolBarLayout
-    Connections {
-        target: player
-    }
-
     Rectangle {
         id: playerRect
         anchors.fill: parent
@@ -20,10 +16,10 @@ Page {
             height: parent.height * 0.14
             x: parent.height * 0.015
             y: parent.height * 0.015
-            color: "#000033"
+            color: "transparent"
             Text {
                 text: player.name
-                color: "lightblue"
+                color: "darkblue"
                 font.pixelSize: parent.height * 0.4
                 anchors.centerIn: parent
             }

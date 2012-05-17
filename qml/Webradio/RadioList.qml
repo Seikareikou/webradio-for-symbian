@@ -14,7 +14,7 @@ Page {
         anchors.fill: parent
         XmlListModel {
              id: xmlRadio
-             source: "database.xml"
+             source: ":database.xml"
              query: "/database/radio"
 
              XmlRole { name: "name";  query: "@name/string()" }
@@ -22,7 +22,7 @@ Page {
         }
         XmlListModel {
              id: xmlStation
-             source: "database.xml"
+             source: ":database.xml"
 
              XmlRole { name: "radio_name"; query: "@name/string()" }
              XmlRole { name: "radio_url";  query: "@url/string()"  }
