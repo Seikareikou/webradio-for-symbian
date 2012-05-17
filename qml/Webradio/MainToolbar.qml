@@ -29,7 +29,7 @@ ToolBarLayout {
     ToolButton {
         flat: true
         iconSource: "toolbar-home"
-        onClicked: QmlApplicationViewer.showMinimized();
+//        onClicked: player.sendToBackground();
     }
     ToolButton {
         flat: true

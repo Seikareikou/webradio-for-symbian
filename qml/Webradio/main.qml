@@ -14,13 +14,6 @@ PageStackWindow {
     WebRadioPlayer {
         id: player  
     }
-    Timer {
-        interval: 1
-        running: Qt.WindowActive
-        onTriggered: {
-            QmlApplicationViewer.showExpanded();
-        }
-    }
     RadioList {
         id: radioList
     }
