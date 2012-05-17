@@ -14,6 +14,8 @@ PageStackWindow {
     WebRadioPlayer {
         id: player  
     }
+    Keys.onVolumeUpPressed: player.volume += 10
+    Keys.onVolumeDownPressed: player.volume -= 10
     RadioList {
         id: radioList
     }

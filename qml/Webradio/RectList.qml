@@ -5,7 +5,7 @@ Rectangle {
     id: listRect
 
     property variant model
-    property variant delegate
+    property variant delegate : radioListView
     property variant fRadio
 
     width: parent.width
@@ -46,17 +46,18 @@ Rectangle {
     WaitBanner {
         id: waitBanner
     }
+
     ListView {
         id: listView
         anchors.fill: parent
         model: parent.model
         delegate: parent.delegate
+        highlightMoveDuration: 550
         highlight: Rectangle {
             width: listRect.width
-            height: 95
+            height: fRadio === 0 ? 95 : 80
             color: "lightblue"
         }
-
         focus: false
         MouseArea {
             anchors.fill: parent

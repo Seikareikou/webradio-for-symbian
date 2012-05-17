@@ -56,6 +56,10 @@ Page {
                     player.volume = volumeSlider.value;
                 }
             }
+            Connections {
+                target: player
+                onVolumeChanged: volumeSlider.value = player.volume
+            }
             MuteButton {
                 id: muteButton
             }
