@@ -13,7 +13,7 @@ Rectangle {
     y: tabs.height
     z: 0
     clip: true
-    color: "#CCCCCC"
+    color: "#BBBBBB"
     Connections {
         target: player
         ignoreUnknownSignals: true
@@ -56,7 +56,7 @@ Rectangle {
         highlight: Rectangle {
             width: listRect.width
             height: fRadio === 0 ? 95 : 80
-            color: "lightblue"
+            color: Qt.rgba(0.6, 0.6, 0.9, 0.7)
         }
         focus: false
         MouseArea {

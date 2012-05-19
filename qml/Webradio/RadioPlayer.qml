@@ -12,19 +12,32 @@ Page {
     Rectangle {
         id: playerRect
         anchors.fill: parent
-        color: "#999999"
         height: parent.height
+        color: "transparent"
+        gradient: Gradient {
+            GradientStop {
+                position: 0.00;
+                color: Qt.rgba(0.4, 0.4, 0.6, 0.4);
+            }
+            GradientStop {
+                position: 0.15;
+                color: Qt.rgba(0.6, 0.6, 0.9, 0.8)
+            }
+            GradientStop {
+                position: 0.60
+                color: Qt.rgba(0.6, 0.6, 0.9, 0.8)
+            }
+        }
         Rectangle {
             id: radioTitle
-            width: parent.width - parent.height * 0.015 * 2
+            width: parent.width
             height: parent.height * 0.14
-            x: parent.height * 0.015
-            y: parent.height * 0.015
             color: "transparent"
             Text {
                 text: player.name
-                color: "darkblue"
+                color: "#000022"
                 font.pixelSize: parent.height * 0.4
+                font.bold: true
                 anchors.centerIn: parent
             }
         }
