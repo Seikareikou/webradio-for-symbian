@@ -43,7 +43,9 @@ ToolBarLayout {
     ToolButton {
         flat: true
         iconSource: "toolbar-home"
-//        onClicked: player.sendToBackground();
+        onClicked: {
+
+        }
     }
     ToolButton {
         flat: true
