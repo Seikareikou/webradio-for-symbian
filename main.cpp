@@ -11,8 +11,6 @@ int main(int argc, char *argv[])
 
     QmlApplicationViewer viewer;
 
-    viewer.rootContext()->setContextProperty("QmlApplicationViewer", (QObject *)&viewer);
-
     viewer.setOrientation(QmlApplicationViewer::ScreenOrientationLockPortrait);
     viewer.setMainQmlFile(QLatin1String("qml/Webradio/main.qml"));
     viewer.showExpanded();

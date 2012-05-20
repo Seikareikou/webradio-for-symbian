@@ -25,7 +25,7 @@ Page {
             }
             GradientStop {
                 position: 0.60
-                color: Qt.rgba(0.6, 0.6, 0.9, 0.8)
+                color: Qt.rgba(0.6, 0.6, 0.7, 1)
             }
         }
         Rectangle {
