@@ -123,3 +123,9 @@ void WebRadioPlayer::stateChangedSender(QMediaPlayer::State state)
     if (state == QMediaPlayer::PlayingState)
         emit stChanged();
 }
+
+void WebRadioPlayer::clearData()
+{
+    radioUrl  = "";
+    radioName = "";
+}

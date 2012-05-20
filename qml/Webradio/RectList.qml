@@ -1,5 +1,7 @@
 // import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
+import com.nokia.extras 1.1
+import com.nokia.symbian 1.1
 
 Rectangle {
     id: listRect
@@ -18,35 +20,32 @@ Rectangle {
         target: player
         ignoreUnknownSignals: true
         onAudioChanged: {
+            loadingIndicator.visible = false;
             if (!player.signalsFilter()) {
                 window.pageStack.push(radioPlayer);
-                waitBanner.close();
                 player.addToRecent();
             }
         }
         onErrorFound: {
+            loadingIndicator.visible = false;
             if (!player.signalsFilter()) {
                 if (window.pageStack.currentPage == radioPlayer)
                     window.pageStack.pop();
                 player.playing = false;
-                waitBanner.close();
+                player.clearData();
                 errorDialog.open();
             }
         }
         onStChanged: {
-            if (!player.signalsFilter() &&
-                window.pageStack.currentPage != radioPlayer) {
-                waitBanner.open();
-            }
+            loadingIndicator.visible = true;
         }
     }
     ErrorDialog {
         id: errorDialog
     }
-    WaitBanner {
-        id: waitBanner
+    LoadingIndicator {
+        id: loadingIndicator
     }
-
     ListView {
         id: listView
         anchors.fill: parent
