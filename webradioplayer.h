@@ -63,6 +63,7 @@ public slots:
     void errorFoundSender(QMediaPlayer::Error error);
     void stateChangedSender(QMediaPlayer::State state);
     bool isCurrentFave();
+    void clearData();
     int signalsFilter();
 };
 
