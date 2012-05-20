@@ -1,4 +1,3 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
 import QtQuick 1.1
 import com.nokia.extras 1.1
 import com.nokia.symbian 1.1
@@ -37,7 +36,8 @@ Rectangle {
             }
         }
         onStChanged: {
-            loadingIndicator.visible = true;
+            if (window.pageStack.currentPage != radioPlayer)
+                loadingIndicator.visible = true;
         }
     }
     ErrorDialog {
@@ -74,7 +74,7 @@ Rectangle {
                 }
                 case 1:
                 {
-                    if (player.url != xmlStation.get(listView.currentIndex).radio_url) {
+                    if (player.url != xmlStation.get(listView.currentIndex).radio_url || player.playing == false) {
                         player.playing = false;
                         player.url  = xmlStation.get(listView.currentIndex).radio_url;
                         player.name = xmlStation.get(listView.currentIndex).radio_name;
@@ -84,7 +84,7 @@ Rectangle {
                 }
                 case 2:
                 {
-                    if (player.url != xmlFave.get(listView.currentIndex).radio_url) {
+                    if (player.url != xmlFave.get(listView.currentIndex).radio_url || player.playing == false) {
                         player.playing = false;
                         player.url  = xmlFave.get(listView.currentIndex).radio_url;
                         player.name = xmlFave.get(listView.currentIndex).radio_name;
@@ -94,7 +94,7 @@ Rectangle {
                 }
                 case 3:
                 {
-                    if (player.url != xmlRecent.get(listView.currentIndex).radio_url) {
+                    if (player.url != xmlRecent.get(listView.currentIndex).radio_url || player.playing == false) {
                         player.playing = false;
                         player.url  = xmlRecent.get(listView.currentIndex).radio_url;
                         player.name = xmlRecent.get(listView.currentIndex).radio_name;
