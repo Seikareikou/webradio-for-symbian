@@ -5,9 +5,9 @@ import com.nokia.symbian 1.1
 Rectangle {
     id: listRect
 
-    property variant model
-    property variant delegate : radioListView
-    property variant fRadio
+    property XmlListModel model : stationListView
+    property Component delegate : radioListView
+    property int fRadio         : 0
 
     width: parent.width
     height: parent.height - tabs.height
@@ -61,6 +61,8 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
+                if(loadingIndicator.visible)
+                    return;
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
                 switch (listRect.fRadio) {
                 case 0:

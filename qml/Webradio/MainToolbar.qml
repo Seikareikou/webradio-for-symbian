@@ -4,7 +4,7 @@ import com.nokia.symbian 1.1
 ToolBarLayout {
     id: toolBarLayout
 
-    property variant enablePlay: true
+    property bool enablePlay: true
 
     ToolButton {
         id: toolbarBack
