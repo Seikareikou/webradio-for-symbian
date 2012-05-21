@@ -41,13 +41,6 @@ ToolBarLayout {
     }
     ToolButton {
         flat: true
-        iconSource: "toolbar-home"
-        onClicked: {
-
-        }
-    }
-    ToolButton {
-        flat: true
         iconSource: "toolbar-menu"
         onClicked: mainMenu.open()
     }

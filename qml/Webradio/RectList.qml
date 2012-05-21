@@ -51,7 +51,7 @@ Rectangle {
         anchors.fill: parent
         model: parent.model
         delegate: parent.delegate
-        highlightMoveDuration: 550
+        highlightMoveDuration: 1
         highlight: Rectangle {
             width: listRect.width
             height: fRadio === 0 ? 95 : 80

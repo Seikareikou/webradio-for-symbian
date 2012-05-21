@@ -16,15 +16,19 @@ Page {
         gradient: Gradient {
             GradientStop {
                 position: 0.00;
-                color: Qt.rgba(0.4, 0.4, 0.6, 0.4);
+                color: "#8888FF"
             }
             GradientStop {
                 position: 0.15;
-                color: Qt.rgba(0.6, 0.6, 0.9, 0.8)
+                color: "#999999"
             }
             GradientStop {
                 position: 0.60
-                color: Qt.rgba(0.6, 0.6, 0.7, 1)
+                color: "#BBBBBB"
+            }
+            GradientStop {
+                position: 0.85
+                color: "#999999"
             }
         }
         Rectangle {
