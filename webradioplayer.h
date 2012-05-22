@@ -65,6 +65,9 @@ public slots:
     bool isCurrentFave();
     void clearData();
     int signalsFilter();
+
+    void saveVolumeLevel();
+    void loadVolumeLevel();
 };
 
 #endif // WEBRADIOPLAYER_H
