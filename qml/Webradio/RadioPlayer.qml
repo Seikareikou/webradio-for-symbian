@@ -19,7 +19,7 @@ Page {
                 color: "#8888FF"
             }
             GradientStop {
-                position: 0.15;
+                position: 0.18;
                 color: "#999999"
             }
             GradientStop {
