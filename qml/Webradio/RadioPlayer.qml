@@ -61,7 +61,7 @@ Page {
                 id: volumeSlider
                 maximumValue: 100
                 minimumValue: 0
-                value: 50
+                value: player.volume
                 stepSize: 1
                 valueIndicatorVisible: true
 
@@ -74,7 +74,16 @@ Page {
             }
             Connections {
                 target: player
-                onVolumeChanged: volumeSlider.value = player.volume
+                onVolumeChanged: {
+                    volumeTimer.stop();
+                    volumeSlider.value = player.volume;
+                    volumeTimer.start();
+                }
+            }
+            Timer {
+                id: volumeTimer
+                interval: 1000
+                onTriggered: player.saveVolumeLevel();
             }
             MuteButton {
                 id: muteButton

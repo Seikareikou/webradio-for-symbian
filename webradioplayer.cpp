@@ -4,8 +4,8 @@ WebRadioPlayer::WebRadioPlayer(QDeclarativeItem *parent) :
     QDeclarativeItem(parent)
 {
     player = new QMediaPlayer(this);
-    radioVolume = 50;
-    player->setVolume(50);
+    loadVolumeLevel();
+    player->setVolume(radioVolume);
     radioMuted = false;
     signalsFilterCount = 0;
     QObject::connect(player, SIGNAL(audioAvailableChanged(bool)), this, SLOT(audioChangedSender(bool)));
@@ -133,4 +133,25 @@ void WebRadioPlayer::clearData()
 {
     radioUrl  = "";
     radioName = "";
+}
+
+void WebRadioPlayer::saveVolumeLevel()
+{
+    QFile file("qml\\Webradio\\volumeLevel");
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    QTextStream stream(&file);
+    stream << radioVolume;
+    file.close();
+}
+
+void WebRadioPlayer::loadVolumeLevel()
+{
+    QFile file("qml\\Webradio\\volumeLevel");
+    file.open(QIODevice::ReadWrite | QIODevice::Text);
+    QTextStream stream(&file);
+    QString level;
+    stream >> level;
+    if (level.size()) radioVolume = level.toInt();
+    else radioVolume = 50;
+    file.close();
 }

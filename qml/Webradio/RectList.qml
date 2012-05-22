@@ -40,11 +40,11 @@ Rectangle {
                 loadingIndicator.visible = true;
         }
     }
-    ErrorDialog {
-        id: errorDialog
-    }
     LoadingIndicator {
         id: loadingIndicator
+    }
+    ErrorDialog {
+        id: errorDialog
     }
     ListView {
         id: listView
