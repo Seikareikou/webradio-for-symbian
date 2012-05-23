@@ -151,7 +151,7 @@ void WebRadioPlayer::loadVolumeLevel()
     QTextStream stream(&file);
     QString level;
     stream >> level;
-    if (level.size()) radioVolume = level.toInt();
-    else radioVolume = 50;
+    if (level.size()) setVolume(level.toInt());
+    else setVolume(50);
     file.close();
 }
