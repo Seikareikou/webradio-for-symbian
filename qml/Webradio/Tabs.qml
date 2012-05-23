@@ -37,6 +37,8 @@ Rectangle {
             text: window.tabText
             height: parent.height
             onClicked: {
+                if (loadingIndicator.visible === true)
+                    return;
                 if (window.pageStack.currentPage !== radioList)
                     window.pageStack.replace(radioList);
             }
@@ -46,6 +48,8 @@ Rectangle {
             text: "Favorites"
             height: parent.height
             onClicked: {
+                if (loadingIndicator.visible === true)
+                    return;
                 if (window.pageStack.currentPage !== favoriteList)
                     window.pageStack.replace(favoriteList);
             }
@@ -55,6 +59,8 @@ Rectangle {
             text: "Recent"
             height: parent.height
             onClicked: {
+                if (loadingIndicator.visible === true)
+                    return;
                 if (window.pageStack.currentPage !== recentList)
                     window.pageStack.replace(recentList);
             }

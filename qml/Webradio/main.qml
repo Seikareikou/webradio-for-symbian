@@ -44,5 +44,8 @@ PageStackWindow {
         id: emptyRadioDialog
         message: "No radio station is selected\n"
     }
+    LoadingIndicator {
+        id: loadingIndicator
+    }
 }
 

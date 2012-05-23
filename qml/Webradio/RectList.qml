@@ -5,7 +5,7 @@ import com.nokia.symbian 1.1
 Rectangle {
     id: listRect
 
-    property XmlListModel model : stationListView
+    property XmlListModel model : xmlRadio
     property Component delegate : radioListView
     property int fRadio         : 0
 
@@ -39,9 +39,6 @@ Rectangle {
             if (window.pageStack.currentPage != radioPlayer)
                 loadingIndicator.visible = true;
         }
-    }
-    LoadingIndicator {
-        id: loadingIndicator
     }
     ErrorDialog {
         id: errorDialog
