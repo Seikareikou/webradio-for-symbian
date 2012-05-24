@@ -58,8 +58,6 @@ Rectangle {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                if(loadingIndicator.visible)
-                    return;
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
                 switch (listRect.fRadio) {
                 case 0:

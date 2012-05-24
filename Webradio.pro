@@ -29,7 +29,8 @@ MOBILITY += multimedia
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
     webradioplayer.cpp \
-    favorites.cpp
+    favorites.cpp \
+    mediakeycaptureitem.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -60,7 +61,8 @@ OTHER_FILES += \
 
 HEADERS += \
     webradioplayer.h \
-    favorites.h
+    favorites.h \
+    mediakeycaptureitem.h
 
 RESOURCES += \
     resources.qrc

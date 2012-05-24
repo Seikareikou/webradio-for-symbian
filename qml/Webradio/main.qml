@@ -1,6 +1,7 @@
 import QtQuick 1.1
 import QtMultimediaKit 1.1
 import WRP 1.0
+import MKCI 1.0
 import com.nokia.symbian 1.1
 
 PageStackWindow {
@@ -14,8 +15,12 @@ PageStackWindow {
     WebRadioPlayer {
         id: player  
     }
-    Keys.onVolumeUpPressed: player.volume += 10
-    Keys.onVolumeDownPressed: player.volume -= 10
+    MediaKeyCaptureItem {
+        id: mkci
+        onVolumeUpPressed: player.volume += 10
+        onVolumeDownPressed: player.volume -= 10
+    }
+
     RadioList {
         id: radioList
     }
@@ -46,6 +51,15 @@ PageStackWindow {
     }
     LoadingIndicator {
         id: loadingIndicator
+    }
+    Rectangle {
+        id: loadingRect
+        anchors.fill: parent
+        color: Qt.rgba(0, 0, 0, 0.7)
+        visible: loadingIndicator.visible
+        MouseArea {
+            anchors.fill: parent
+        }
     }
 }
 

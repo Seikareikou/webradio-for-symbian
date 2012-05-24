@@ -5,8 +5,8 @@
         <file>qml/Webradio/notmute.png</file>
         <file>qml/Webradio/play.png</file>
         <file>qml/Webradio/stop.png</file>
-        <file>qml/Webradio/appicon.png</file>
         <file alias="dislike.png">qml/Webradio/dislike_2.png</file>
+        <file>qml/Webradio/Webradio80.png</file>
     </qresource>
     <qresource prefix="/xml">
         <file>qml/Webradio/database.xml</file>

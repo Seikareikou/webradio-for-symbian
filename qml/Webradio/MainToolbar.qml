@@ -11,8 +11,6 @@ ToolBarLayout {
         flat: true
         iconSource: "toolbar-back"
         onClicked: {
-            if (loadingIndicator.visible === true)
-                return;
             if (window.pageStack.depth > 1)
                 window.pageStack.pop();
             else {
@@ -35,8 +33,6 @@ ToolBarLayout {
         enabled: toolBarLayout.enablePlay
         iconSource: "toolbar-mediacontrol-play"
         onClicked: {
-            if (loadingIndicator.visible === true)
-                return;
             if (player.name)
                 window.pageStack.push(radioPlayer);
             else
@@ -46,11 +42,7 @@ ToolBarLayout {
     ToolButton {
         flat: true
         iconSource: "toolbar-menu"
-        onClicked: {
-            if (loadingIndicator.visible === true)
-                return;
-            mainMenu.open()
-        }
+        onClicked: mainMenu.open();
     }
     Connections {
         target: player

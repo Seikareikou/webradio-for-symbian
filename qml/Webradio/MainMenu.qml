@@ -6,11 +6,11 @@ Menu {
     content: MenuLayout {
         MenuItem {
             text: "About"
-            onClicked: aboutDialog.open()
+            onClicked: aboutDialog.open();
         }
         MenuItem {
             text: "Exit"
-            onClicked: Qt.quit()
+            onClicked: exitDialog.open();
         }
     }
 }
