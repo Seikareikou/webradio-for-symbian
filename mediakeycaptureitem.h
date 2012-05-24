@@ -3,11 +3,11 @@
 
 #include <QDeclarativeItem>
 
-#ifdef Q_WS_SYMBIAN
+#ifdef Q_WS_S60
 #include <remconcoreapitargetobserver.h>    // link against RemConCoreApi.lib
 #include <remconcoreapitarget.h>            // and
 #include <remconinterfaceselector.h>        // RemConInterfaceBase.lib
-#endif // Q_WS_SYMBIAN
+#endif // Q_WS_S60
 
 class MediakeyCaptureItemPrivate;
 class MediakeyCaptureItem : public QDeclarativeItem

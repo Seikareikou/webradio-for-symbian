@@ -1,5 +1,5 @@
 #include "mediakeycaptureitem.h"
-#ifdef Q_WS_SYMBIAN
+#ifdef Q_WS_S60
 
 // A private class to access Symbian RemCon API
 class MediakeyCaptureItemPrivate : public QObject, public MRemConCoreApiTargetObserver

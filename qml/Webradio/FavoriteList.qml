@@ -26,6 +26,7 @@ Page {
 
         Tabs {
             id: tabs
+            checked: 1
         }
         RectList {
             model: xmlFave

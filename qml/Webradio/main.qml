@@ -20,7 +20,6 @@ PageStackWindow {
         onVolumeUpPressed: player.volume += 10
         onVolumeDownPressed: player.volume -= 10
     }
-
     RadioList {
         id: radioList
     }

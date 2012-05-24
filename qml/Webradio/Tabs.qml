@@ -2,13 +2,16 @@ import QtQuick 1.1
 import com.nokia.symbian 1.1
 
 Rectangle {
-    id: tabs
+    id: tabsLocal
+
+    property int checked: -1
+
     width: parent.width
     height: 60
     color: "black"
     ButtonRow {
         id: row
-        checkedButton: all
+        checkedButton: parent.checked === 0 ? all : (parent.checked === 1 ? fave : recent)
         height: parent.height
         width: parent.width
         Connections {

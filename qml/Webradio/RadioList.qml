@@ -35,6 +35,7 @@ Page {
 
         Tabs {
             id: tabs
+            checked: 0
         }
         RectList {
             id: rectList

@@ -26,6 +26,7 @@ Page {
 
         Tabs {
             id: tabs
+            checked: 2
         }
         RectList {
             model: xmlRecent
