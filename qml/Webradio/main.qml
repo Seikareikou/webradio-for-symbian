@@ -11,7 +11,6 @@ PageStackWindow {
     showToolBar: true
 
     property string tabText: "All"
-
     WebRadioPlayer {
         id: player  
     }
@@ -19,6 +18,9 @@ PageStackWindow {
         id: mkci
         onVolumeUpPressed: player.volume += 10
         onVolumeDownPressed: player.volume -= 10
+    }
+    VolumeSlideIndicator {
+        id: vsi
     }
     RadioList {
         id: radioList

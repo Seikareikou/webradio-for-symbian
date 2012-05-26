@@ -63,7 +63,8 @@ OTHER_FILES += \
     qml/Webradio/MainToolbar.qml \
     qml/Webradio/MainMenu.qml \
     qml/Webradio/AboutDialog.qml \
-    qml/Webradio/ExitDialog.qml
+    qml/Webradio/ExitDialog.qml \
+    qml/Webradio/VolumeSlideIndicator.qml
 
 HEADERS += \
     webradioplayer.h \
