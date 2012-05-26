@@ -19,17 +19,17 @@ Rectangle {
         target: player
         ignoreUnknownSignals: true
         onAudioChanged: {
-            connectionTimer.stop();
             loadingIndicator.visible = false;
             if (!player.signalsFilter()) {
+                connectionTimer.stop();
                 window.pageStack.push(radioPlayer);
                 player.addToRecent();
             }
         }
         onErrorFound: {
-            connectionTimer.stop();
             loadingIndicator.visible = false;
             if (!player.signalsFilter()) {
+                connectionTimer.stop();
                 if (window.pageStack.currentPage == radioPlayer)
                     window.pageStack.pop();
                 player.playing = false;
@@ -38,10 +38,12 @@ Rectangle {
             }
         }
         onStChanged: {
-            connectionTimer.stop();
-            connectionTimer.start();
             if (window.pageStack.currentPage != radioPlayer) {
                 loadingIndicator.visible = true;
+                if (!player.signalsFilter()) {
+                    connectionTimer.stop();
+                    connectionTimer.start();
+                }
             }
         }
     }
