@@ -19,6 +19,7 @@ Rectangle {
         target: player
         ignoreUnknownSignals: true
         onAudioChanged: {
+            connectionTimer.stop();
             loadingIndicator.visible = false;
             if (!player.signalsFilter()) {
                 window.pageStack.push(radioPlayer);
@@ -26,6 +27,7 @@ Rectangle {
             }
         }
         onErrorFound: {
+            connectionTimer.stop();
             loadingIndicator.visible = false;
             if (!player.signalsFilter()) {
                 if (window.pageStack.currentPage == radioPlayer)
@@ -36,9 +38,20 @@ Rectangle {
             }
         }
         onStChanged: {
-            if (window.pageStack.currentPage != radioPlayer)
+            connectionTimer.stop();
+            connectionTimer.start();
+            if (window.pageStack.currentPage != radioPlayer) {
                 loadingIndicator.visible = true;
+            }
         }
+    }
+    Timer {
+        id: connectionTimer
+        interval: 10000
+        onTriggered: timeOutDialog.open();
+    }
+    TimeOutDialog {
+        id: timeOutDialog
     }
     ErrorDialog {
         id: errorDialog
