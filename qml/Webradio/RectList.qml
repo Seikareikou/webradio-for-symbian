@@ -50,7 +50,10 @@ Rectangle {
     Timer {
         id: connectionTimer
         interval: 10000
-        onTriggered: timeOutDialog.open();
+        onTriggered: {
+            loadingIndicator.visible = false;
+            timeOutDialog.open();
+        }
     }
     TimeOutDialog {
         id: timeOutDialog
