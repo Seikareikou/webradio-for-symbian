@@ -45,7 +45,7 @@ void WebRadioPlayer::setName(QString str) {
 void WebRadioPlayer::setUrl(QString str) {
     radioUrl = str;
     QMediaContent nullContent;
-    if (!radioUrl.isNull())
+    if (radioUrl != "")
         player->setMedia(QUrl(radioUrl));
     else
         player->setMedia(nullContent);
@@ -54,10 +54,16 @@ void WebRadioPlayer::setUrl(QString str) {
 
 void WebRadioPlayer::setPlaying(bool b) {
     radioPlaying = b;
-    if (radioPlaying)
+    QMediaContent null;
+    if (radioPlaying) {
+        if (player->media() == null)
+            player->setMedia(QUrl(radioUrl));
         player->play();
-    else
+    }
+    else {
         player->stop();
+        player->setMedia(null);
+    }
     emit playingChanged();
 }
 

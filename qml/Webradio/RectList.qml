@@ -34,17 +34,20 @@ Rectangle {
                     window.pageStack.pop();
                 player.playing = false;
                 player.clearData();
-                errorDialog.open();
+                if (window.laodingFilter === 2)
+                    errorDialog.open();
             }
         }
         onStChanged: {
-            if (window.pageStack.currentPage != radioPlayer) {
+            if (window.loadingFilter === 2) {
                 loadingIndicator.visible = true;
                 if (!player.signalsFilter()) {
                     connectionTimer.stop();
                     connectionTimer.start();
                 }
             }
+            else
+                window.loadingFilter++;
         }
     }
     Timer {

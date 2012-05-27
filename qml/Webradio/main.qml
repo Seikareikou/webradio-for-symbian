@@ -11,6 +11,7 @@ PageStackWindow {
     showToolBar: true
 
     property string tabText: "All"
+    property int loadingFilter: 0
     WebRadioPlayer {
         id: player  
     }
