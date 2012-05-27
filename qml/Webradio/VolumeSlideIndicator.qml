@@ -9,6 +9,12 @@ Rectangle {
     height: 96
     x: 10
     y: 115
+    z: 10
+    visible: opacity === 0 ? false : true
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {return}
+    }
     radius: 16
     smooth: true
     color: Qt.rgba(0.1, 0.1, 0.1, 1);
