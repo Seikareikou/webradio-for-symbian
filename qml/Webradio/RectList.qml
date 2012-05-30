@@ -42,7 +42,7 @@ Rectangle {
             }
         }
         onStChanged: {
-            if (window.loadingFilter === 2) {
+            if (window.loadingFilter >= 3) {
                 loadingIndicator.visible = true;
                 if (!player.signalsFilter()) {
                     connectionTimer.stop();
@@ -59,7 +59,8 @@ Rectangle {
         interval: 10000
         onTriggered: {
             loadingIndicator.visible = false;
-            timeOutDialog.open();
+            if (window.pageStack.currentPage !== radioPlayer)
+                timeOutDialog.open();
         }
     }
     TimeOutDialog {

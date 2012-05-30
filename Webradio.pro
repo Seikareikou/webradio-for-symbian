@@ -74,4 +74,4 @@ HEADERS += \
 RESOURCES += \
     resources.qrc
 
-ICON = icon.svg
+ICON = Webradio.svg
