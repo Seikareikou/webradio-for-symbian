@@ -34,8 +34,11 @@ Rectangle {
                     window.pageStack.pop();
                 player.playing = false;
                 player.clearData();
-                if (window.laodingFilter === 2)
+                console.log(window.loadingFilter)
+                if (window.loadingFilter >= 3) {
                     errorDialog.open();
+                    connectionTimer.stop()
+                }
             }
         }
         onStChanged: {
@@ -45,6 +48,7 @@ Rectangle {
                     connectionTimer.stop();
                     connectionTimer.start();
                 }
+                window.loadingFilter++;
             }
             else
                 window.loadingFilter++;
