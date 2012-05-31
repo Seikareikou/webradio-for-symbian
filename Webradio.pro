@@ -6,7 +6,10 @@ DEPLOYMENTFOLDERS = folder_01
 # Additional import path used to resolve QML modules in Creator's code model
 QML_IMPORT_PATH =
 
+# UID for development
 symbian:TARGET.UID3 = 0xE10C46F3
+# UID for Nokia Store
+#symbian:TARGET.UID3 = 0x2006290c
 
 # Smart Installer package's UID
 # This UID is from the protected range and therefore the package will
