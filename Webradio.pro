@@ -7,9 +7,17 @@ DEPLOYMENTFOLDERS = folder_01
 QML_IMPORT_PATH =
 
 # UID for development
-symbian:TARGET.UID3 = 0xE10C46F3
+#symbian:TARGET.UID3 = 0xE10C46F3
 # UID for Nokia Store
-#symbian:TARGET.UID3 = 0x2006290c
+symbian {
+qt_components.pkg_prerules += (0x200346DE), 1, 1, 0, {\Qt Components\} DEPLOYMENT += qt_components\
+vendorinfo = "%{\"Yaroslavl FRUCT Lab\"}" \
+             ":\"Yaroslavl FRUCT Lab\""
+my_deployment.pkg_prerules += vendorinfo
+DEPLOYMENT += my_deployment
+DEPLOYMENT.display_name = WebRadio
+TARGET.UID3 = 0x2006290c
+}
 
 # Smart Installer package's UID
 # This UID is from the protected range and therefore the package will
@@ -22,7 +30,7 @@ symbian:TARGET.UID3 = 0xE10C46F3
 symbian:TARGET.CAPABILITY += NetworkServices
 
 symbian: {
-INCLUDEPATH += MW_LAYER_SYSTEMINCLUDE // Not sure if this is needed...
+INCLUDEPATH += MW_LAYER_SYSTEMINCLUDE # Not sure if this is needed...
     LIBS += -L\epoc32\release\armv5\lib -lremconcoreapi
     LIBS += -L\epoc32\release\armv5\lib -lremconinterfacebase
 }
@@ -33,7 +41,8 @@ CONFIG += mobility
 MOBILITY += multimedia
 
 # Add dependency to symbian components
-# CONFIG += qtquickcomponents
+CONFIG += qtquickcomponents
+CONFIG += qt-components
 
 # The .cpp file which was generated for your project. Feel free to hack it.
 SOURCES += main.cpp \
@@ -46,12 +55,6 @@ include(qmlapplicationviewer/qmlapplicationviewer.pri)
 qtcAddDeployment()
 
 OTHER_FILES += \
-    qtc_packaging/debian_harmattan/rules \
-    qtc_packaging/debian_harmattan/README \
-    qtc_packaging/debian_harmattan/copyright \
-    qtc_packaging/debian_harmattan/control \
-    qtc_packaging/debian_harmattan/compat \
-    qtc_packaging/debian_harmattan/changelog \
     qml/Webradio/RadioList.qml \
     qml/Webradio/RadioPlayer.qml \
     qml/Webradio/Tabs.qml \
