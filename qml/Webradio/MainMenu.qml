@@ -5,6 +5,10 @@ Menu {
     id: mainMenu
     content: MenuLayout {
         MenuItem {
+            text: "Add station"
+            onClicked: addStation.open();
+        }
+        MenuItem {
             text: "About"
             onClicked: aboutDialog.open();
         }

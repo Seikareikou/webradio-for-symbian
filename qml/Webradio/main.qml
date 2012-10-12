@@ -41,6 +41,9 @@ PageStackWindow {
     MainMenu {
         id: mainMenu
     }
+    AddStationDialog {
+        id: addStation
+    }
     AboutDialog {
         id: aboutDialog
     }
