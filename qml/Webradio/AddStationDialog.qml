@@ -6,9 +6,10 @@ QueryDialog {
     titleText: "Add your station"
     acceptButtonText: "Add"
     rejectButtonText: "Close"
+    icon: ":Webradio80.png"
     content:
         Item {
-            id: stationName
+            id: stationInput
             width: parent.width
             TextInput {
                 id: textInput

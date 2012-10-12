@@ -6,5 +6,6 @@ QueryDialog {
     message: "Are you sure you want to quit?\n"
     acceptButtonText: "Yes"
     rejectButtonText: "No"
+    icon: ":Webradio80.png"
     onAccepted: Qt.quit()
 }
