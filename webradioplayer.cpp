@@ -93,6 +93,12 @@ void WebRadioPlayer::addToFavorites()
     favorites.addToFavorites(radioName, radioUrl);
 }
 
+void WebRadioPlayer::addToFavorites(QString name, QString url)
+{
+    Favorites favorites("qml\\Webradio\\favorite.xml");
+    favorites.addToFavorites(name, url);
+}
+
 void WebRadioPlayer::addToRecent()
 {
     Favorites recent("qml\\Webradio\\recent.xml");

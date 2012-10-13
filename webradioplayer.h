@@ -58,6 +58,7 @@ public slots:
     void setVolume(int vol);
     void setMuted(bool b);
     void addToFavorites();
+    void addToFavorites(QString name, QString url);
     void addToRecent();
     bool checkPlayerError();
     void audioChangedSender(bool available);
