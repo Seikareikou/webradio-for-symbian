@@ -3,32 +3,27 @@ import com.nokia.symbian 1.1
 
 QueryDialog {
     id: addStation
-    titleText: "Add your station"
+    titleText: "Add custom station"
     acceptButtonText: "Add"
-    rejectButtonText: "Close"
+    rejectButtonText: "Cancel"
     icon: ":Webradio80.png"
     content:
-        Item {
-            id: stationInput
-            width: parent.width
-            TextInput {
-                id: textInput
-                text: "name"
-                color: "white"
-                activeFocusOnPress: false
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        if (!textInput.activeFocus) {
-                            textInput.forceActiveFocus();
-                            textInput.openSoftwareInputPanel();
-                            textInput.text = ""
-                        } else textInput.focus = false;
-                    }
-                    onPressAndHold: textInput.closeSoftwareInputPanel();
-                }
-            }
-
+    Item {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        height: itemName.height + itemUrl.height + 40
+        AddStationDialogItem {
+            id: itemName
+            anchors.top: parent.top
+            text: "Name:"
         }
-
+        AddStationDialogItem {
+            id: itemUrl
+            anchors.top: itemName.bottom
+            text: "URL: "
+            anchors.bottomMargin: 30
+            anchors.bottom: parent.bottom
+        }
+    }
 }
