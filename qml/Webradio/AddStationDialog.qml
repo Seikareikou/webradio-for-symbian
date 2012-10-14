@@ -26,4 +26,7 @@ QueryDialog {
             anchors.bottom: parent.bottom
         }
     }
+    onAccepted: {
+        player.addToFavorites(itemName.inputData, itemUrl.inputData)
+    }
 }
