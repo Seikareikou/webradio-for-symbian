@@ -6,7 +6,7 @@ Menu {
     content: MenuLayout {
         MenuItem {
             text: "Add station"
-            onClicked: addStation.open();
+            onClicked: addStationDialog.open();
         }
         MenuItem {
             text: "About"
