@@ -29,5 +29,6 @@ QueryDialog {
     onAccepted: {
         if (itemName.inputData != "" && itemUrl.inputData != "")
             player.addToFavorites(itemName.inputData, itemUrl.inputData)
+        xmlFave.reload()
     }
 }

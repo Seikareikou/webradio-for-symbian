@@ -52,9 +52,11 @@ Page {
             delegate: favoriteListView
             fRadio: 2
         }
-
         DeleteStationDialog {
-
+            id: deleteStationDialog
+        }
+        AddStationDialog {
+            id: addStationDialog
         }
     }
 }

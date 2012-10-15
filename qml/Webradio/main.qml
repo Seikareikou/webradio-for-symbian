@@ -42,7 +42,7 @@ PageStackWindow {
         id: mainMenu
     }
     AddStationDialog {
-        id: addStationDialog
+
     }
     AboutDialog {
         id: aboutDialog
