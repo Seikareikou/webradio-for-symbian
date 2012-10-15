@@ -27,6 +27,10 @@ Component {
                 anchors.fill: parent
                 source: ":delete.png"
             }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: deleteStationDialog.open()
+            }
         }
         Rectangle {
             width: parent.width

@@ -69,6 +69,9 @@ Rectangle {
     ErrorDialog {
         id: errorDialog
     }
+    DeleteStationDialog {
+        id: deleteStationDialog
+    }
     ListView {
         id: listView
         anchors.fill: parent
@@ -82,7 +85,8 @@ Rectangle {
         }
         focus: false
         MouseArea {
-            anchors.fill: parent
+            width: window.pageStack.currentPage === favoriteList ? parent.width * 0.85 : parent.width
+            height: parent.height
             onClicked: {
                 listView.currentIndex = listView.indexAt(mouseX, listView.contentY + mouseY);
                 switch (listRect.fRadio) {

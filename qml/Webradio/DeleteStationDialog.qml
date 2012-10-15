@@ -8,6 +8,10 @@ QueryDialog {
     rejectButtonText: "No"
     icon: ":Webradio80.png"
     onAccepted: {
-        Qt.quit()
+        var url, name;
+        url = xmlFave.get(listView.currentIndex).radio_url;
+        name = xmlFave.get(listView.currentIndex).radio_name;
+        player.addToFavorites(name, url)
+        xmlFave.reload()
     }
 }
