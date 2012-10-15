@@ -53,5 +53,13 @@ Page {
             delegate: favoriteListView
             fRadio: 2
         }
+
+        DeleteStationDialog {
+            onAccepted: {
+                url = xmlFave.get(listView.currentIndex).radio_url;
+                name = xmlFave.get(listView.currentIndex).radio_name;
+                player.addToFavorites(name, url)
+            }
+        }
     }
 }

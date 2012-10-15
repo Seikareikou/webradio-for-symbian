@@ -27,6 +27,7 @@ QueryDialog {
         }
     }
     onAccepted: {
-        player.addToFavorites(itemName.inputData, itemUrl.inputData)
+        if (itemName.inputData != "" && itemUrl.inputData != "")
+            player.addToFavorites(itemName.inputData, itemUrl.inputData)
     }
 }
