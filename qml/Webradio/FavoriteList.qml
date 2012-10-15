@@ -28,7 +28,27 @@ Page {
             id: tabs
             checked: 1
         }
+        Rectangle {
+            id: addStationButton
+            width: parent.width
+            y: tabs.y + tabs.height
+            height: 80
+            color: rectList.color
+            Text {
+                text: "Add custom station"
+                anchors.centerIn: parent
+                font.pixelSize: 36
+                font.bold: true
+                font.family: "Helvetica"
+                color: "#111155"
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: addStationDialog.open()
+            }
+        }
         RectList {
+            id: rectList
             model: xmlFave
             delegate: favoriteListView
             fRadio: 2

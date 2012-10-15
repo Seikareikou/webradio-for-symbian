@@ -10,8 +10,8 @@ Rectangle {
     property int fRadio         : 0
 
     width: parent.width
-    height: parent.height - tabs.height
-    y: tabs.height
+    height: window.pageStack.currentPage === favoriteList ? parent.height - tabs.height - addStationButton.height : parent.height - tabs.height
+    y: window.pageStack.currentPage === favoriteList? addStationButton.y + addStationButton.height : tabs.height
     z: 0
     clip: true
     color: "#BBBBBB"
